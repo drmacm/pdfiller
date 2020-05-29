@@ -1,5 +1,6 @@
 @page "/fetchdata"
 @inject HttpClient Http
+@inject Microsoft.JSInterop.IJSRuntime JS
 
 <h1>Weather forecast</h1>
 
@@ -32,6 +33,7 @@ else
             }
         </tbody>
     </table>
+    <button class="btn btn-primary" @onclick="@ExportToPdf">Export to PDF</button>
 }
 
 @code {
@@ -51,5 +53,32 @@ else
         public string Summary { get; set; }
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
+
+@functions {
+    async Task ExportToPdf()
+    {
+        var data = await Http.GetByteArrayAsync("sample-data/src.pdf");
+        var readerStream = new MemoryStream(data);
+        var writerStream = new MemoryStream();
+        PdfReader pdfReader = new PdfReader(readerStream);
+        PdfWriter pdfWriter = new PdfWriter(writerStream);
+        PdfDocument pdfDocument = new PdfDocument(pdfReader, pdfWriter);
+        Document document = new Document(pdfDocument);
+        PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
+
+        IDictionary<String, PdfFormField> fields = form.GetFormFields();
+
+        PdfFormField toSet;
+        fields.TryGetValue("JMB", out toSet);
+        toSet.SetValue("1234567890123");
+
+        fields.TryGetValue("IME", out toSet);
+        toSet.SetValue("Test");
+
+        document.Close();
+
+        await JS.SaveAs("Sample.pdf", writerStream.ToArray());
     }
 }
