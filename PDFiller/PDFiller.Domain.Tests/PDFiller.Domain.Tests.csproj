@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PDFiller.Core\PDFiller.Core.csproj" />
+    <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -60,25 +60,12 @@ else
     async Task ExportToPdf()
     {
         var data = await Http.GetByteArrayAsync("sample-data/src.pdf");
-        var readerStream = new MemoryStream(data);
-        var writerStream = new MemoryStream();
-        PdfReader pdfReader = new PdfReader(readerStream);
-        PdfWriter pdfWriter = new PdfWriter(writerStream);
-        PdfDocument pdfDocument = new PdfDocument(pdfReader, pdfWriter);
-        Document document = new Document(pdfDocument);
-        PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
+        var formToFill = new MemoryStream(data);
 
-        IDictionary<String, PdfFormField> fields = form.GetFormFields();
+        var pdfPlayground = new PDFiller.Domain.PdfPlayground();
 
-        PdfFormField toSet;
-        fields.TryGetValue("JMB", out toSet);
-        toSet.SetValue("1234567890123");
+        var filledForm = pdfPlayground.ExportToPdf(formToFill);
 
-        fields.TryGetValue("IME", out toSet);
-        toSet.SetValue("Test");
-
-        document.Close();
-
-        await JS.SaveAs("Sample.pdf", writerStream.ToArray());
+        await JS.SaveAs("FilledForm.pdf", filledForm.ToArray());
     }
 }

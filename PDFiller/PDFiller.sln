@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Core", "PDFiller.Core\PDFiller.Core.csproj", "{453914BD-D696-4942-8B47-A96EB749DE3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller", "PDFiller\PDFiller.csproj", "{F506C326-2716-42FF-9F64-D72C5FFA0F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Core.Tests", "PDFiller.Core.Tests\PDFiller.Core.Tests.csproj", "{E09623D4-1A14-43B8-B230-6FEC4EF9EB1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Domain", "PDFiller.Domain\PDFiller.Domain.csproj", "{5E519457-CE79-4B46-87F3-766C30EF4075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller", "PDFiller\PDFiller.csproj", "{F506C326-2716-42FF-9F64-D72C5FFA0F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Domain.Tests", "PDFiller.Domain.Tests\PDFiller.Domain.Tests.csproj", "{F92AAD80-786D-44D6-A0D9-29DEAF75376F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{453914BD-D696-4942-8B47-A96EB749DE3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{453914BD-D696-4942-8B47-A96EB749DE3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{453914BD-D696-4942-8B47-A96EB749DE3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{453914BD-D696-4942-8B47-A96EB749DE3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E09623D4-1A14-43B8-B230-6FEC4EF9EB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E09623D4-1A14-43B8-B230-6FEC4EF9EB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E09623D4-1A14-43B8-B230-6FEC4EF9EB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E09623D4-1A14-43B8-B230-6FEC4EF9EB1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F506C326-2716-42FF-9F64-D72C5FFA0F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F506C326-2716-42FF-9F64-D72C5FFA0F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F506C326-2716-42FF-9F64-D72C5FFA0F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F506C326-2716-42FF-9F64-D72C5FFA0F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E519457-CE79-4B46-87F3-766C30EF4075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E519457-CE79-4B46-87F3-766C30EF4075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E519457-CE79-4B46-87F3-766C30EF4075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E519457-CE79-4B46-87F3-766C30EF4075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92AAD80-786D-44D6-A0D9-29DEAF75376F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92AAD80-786D-44D6-A0D9-29DEAF75376F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92AAD80-786D-44D6-A0D9-29DEAF75376F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92AAD80-786D-44D6-A0D9-29DEAF75376F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
