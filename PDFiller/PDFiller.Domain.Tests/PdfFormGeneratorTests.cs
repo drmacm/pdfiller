@@ -1,4 +1,5 @@
 ﻿using iText.Forms.Fields;
+using PDFiller.Domain.Tests.Utilities;
 using System.IO;
 using Xunit;
 
@@ -9,16 +10,38 @@ namespace PDFiller.Domain.Tests
         [Fact]
         public void CanGenerateFormWithASingleTextField()
         {
-            var fileName = "PDFiller-SingleTextBoxForm.pdf";
-            var _formGenerator = new PdfFormGenerator(fileName);
-            _formGenerator.GenerateFormWithSingleTextField();
+            var fileName = "TextBoxForm.pdf";
+            var fields = new[]
+            {
+                new FormField("name", FormFieldType.TextBox)
+            };
+            PdfFormGenerator.GenerateForm(fileName, fields);
 
-            var _formLoader = new PdfFormLoader(fileName);
-
-            var formFields = _formLoader.GetFormFields();
+            var formFields = PdfFormLoader.GetFormFields(fileName);
 
             Assert.Equal(1, formFields.Count);
             Assert.Equal(typeof(PdfTextFormField), formFields["name"].GetType());
+
+            File.Delete(fileName);
+        }
+
+        [Fact]
+        public void CanGenerateFormWithATextFieldAndCheckBox()
+        {
+            var fileName = "TextBoxAndCheckBoxForm.pdf";
+
+            var fields = new[]
+            {
+                new FormField("name", FormFieldType.TextBox),
+                new FormField("enabled", FormFieldType.CheckBox)
+            };
+            PdfFormGenerator.GenerateForm(fileName, fields);
+
+            var formFields = PdfFormLoader.GetFormFields(fileName);
+
+            Assert.Equal(2, formFields.Count);
+            Assert.Equal(typeof(PdfTextFormField), formFields["name"].GetType());
+            Assert.Equal(typeof(PdfButtonFormField), formFields["enabled"].GetType());
 
             File.Delete(fileName);
         }
