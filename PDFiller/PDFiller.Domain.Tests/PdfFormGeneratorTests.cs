@@ -19,8 +19,8 @@ namespace PDFiller.Domain.Tests
 
             var formFields = PdfFormLoader.GetFormFields(fileName);
 
-            Assert.Equal(1, formFields.Count);
-            Assert.Equal(typeof(PdfTextFormField), formFields["name"].GetType());
+            Assert.Single(formFields);
+            Assert.Equal(FormFieldType.TextBox, formFields[0].FieldType);
 
             File.Delete(fileName);
         }
@@ -40,8 +40,8 @@ namespace PDFiller.Domain.Tests
             var formFields = PdfFormLoader.GetFormFields(fileName);
 
             Assert.Equal(2, formFields.Count);
-            Assert.Equal(typeof(PdfTextFormField), formFields["name"].GetType());
-            Assert.Equal(typeof(PdfButtonFormField), formFields["enabled"].GetType());
+            Assert.Equal(FormFieldType.TextBox, formFields[0].FieldType);
+            Assert.Equal(FormFieldType.CheckBox, formFields[1].FieldType);
 
             File.Delete(fileName);
         }

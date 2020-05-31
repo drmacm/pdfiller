@@ -1,7 +1,4 @@
-﻿using iText.Forms.Fields;
-using PDFiller.Domain.Tests.Utilities;
-using System.IO;
-using System.Threading;
+﻿using System.Linq;
 using Xunit;
 
 namespace PDFiller.Domain.Tests
@@ -13,7 +10,7 @@ namespace PDFiller.Domain.Tests
         {
             var fileName = @"SamplePDFs\PRP-1-bos.pdf";
             var formFields = PdfFormLoader.GetFormFields(fileName);
-
+            
             Assert.Equal(38, formFields.Count);
         }
     }
