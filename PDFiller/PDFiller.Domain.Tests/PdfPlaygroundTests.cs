@@ -8,9 +8,12 @@ namespace PDFiller.Domain.Tests
         private readonly PdfPlayground pdfPlayground = new PdfPlayground();
 
         [Fact]
-        public void Test1()
+        public void FillUpTestPdf()
         {
-            pdfPlayground.Play();
+            var source = @"SamplePDFs\PRP-1-bos.pdf";
+            var destination = @"SamplePDFs\PRP-1-bos-filled.pdf";
+            
+            pdfPlayground.FillUpFormAsFile(source, destination);
         }
     }
 }

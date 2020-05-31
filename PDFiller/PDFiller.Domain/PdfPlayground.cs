@@ -11,10 +11,10 @@ namespace PDFiller.Domain
 {
     public class PdfPlayground
     {
-        public void Play()
+        public void FillUpFormAsFile(string source, string destination)
         {
-            PdfReader pdfReader = new PdfReader(@"C:\Users\Mladen\code\pdfiller\PDFiller\src.pdf");
-            PdfWriter pdfWriter = new PdfWriter(@"C:\Users\Mladen\code\pdfiller\PDFiller\dest.pdf");
+            PdfReader pdfReader = new PdfReader(source);
+            PdfWriter pdfWriter = new PdfWriter(destination);
             PdfDocument pdfDocument = new PdfDocument(pdfReader, pdfWriter);
             Document document = new Document(pdfDocument);
             PdfAcroForm form = PdfAcroForm.GetAcroForm(pdfDocument, true);
@@ -28,7 +28,7 @@ namespace PDFiller.Domain
             document.Close();
         }
 
-        public MemoryStream ExportToPdf(MemoryStream formToFill)
+        public MemoryStream FillUpFormAsMemoryStream(MemoryStream formToFill)
         {
             var writerStream = new MemoryStream();
             PdfReader pdfReader = new PdfReader(formToFill);

@@ -10,7 +10,7 @@ namespace PDFiller.Domain.Tests
         [Fact]
         public void CanGenerateFormWithASingleTextField()
         {
-            var fileName = "TextBoxForm.pdf";
+            var fileName = @"SamplePDFs\TextBoxForm.pdf";
             var fields = new[]
             {
                 new FormField("name", FormFieldType.TextBox)
@@ -28,7 +28,7 @@ namespace PDFiller.Domain.Tests
         [Fact]
         public void CanGenerateFormWithATextFieldAndCheckBox()
         {
-            var fileName = "TextBoxAndCheckBoxForm.pdf";
+            var fileName = @"SamplePDFs\TextBoxAndCheckBoxForm.pdf";
 
             var fields = new[]
             {

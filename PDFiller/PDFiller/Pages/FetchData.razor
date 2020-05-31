@@ -64,7 +64,7 @@ else
 
         var pdfPlayground = new PDFiller.Domain.PdfPlayground();
 
-        var filledForm = pdfPlayground.ExportToPdf(formToFill);
+        var filledForm = pdfPlayground.FillUpFormAsMemoryStream(formToFill);
 
         await JS.SaveAs("FilledForm.pdf", filledForm.ToArray());
     }
