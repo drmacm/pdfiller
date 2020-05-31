@@ -6,7 +6,9 @@ Current version serves only as a proof of concept for client-side PDF manipulati
 PDFiller helps you create a simple static website based on your fillable PDF form.
 
 #### Problem description
-Imagine you have a fillable PDF form for which you want to create a nice-looking website. The website should contain an HTML form that represents the fields of your PDF form. There are various reasons why you may want to create such a website:
+Imagine you have a fillable PDF form for which you want to create a nice-looking website. The website should contain an HTML form that represents the fields of your PDF form. After the visitor submits the HTML form, the PDF form should be automatically filled in based on the provided values, and the visitor should be offered to download the filled-in PDF form.
+
+There are various reasons why you may want to create such a website:
 - offering an improved design of the PDF form
 - providing additional explanations for some of the fields
 - making use of responsive design of the HTML form
@@ -23,7 +25,7 @@ PDFiller solves this problem by helping you create a single-page static website 
 - contains the HTML form with the fields based on your PDF form
 - fills the PDF form when the HTML form is submitted and offers it for download
 
-All the functionality happens in the user's browser, which drastically reduces the complexity of the solution. Hosting is also much simpler, providing it's a static website.
+All the functionality happens in the user's browser, which drastically reduces the complexity of the solution. Hosting is also much simpler because it's a static website.
 
 
 
