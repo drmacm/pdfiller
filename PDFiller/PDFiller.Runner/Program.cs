@@ -7,7 +7,6 @@ namespace PDFiller.Runner
     {
         static void Main(string[] args)
         {
-           HtmlFormFinder finder = new HtmlFormFinder();
         }
     }
 }
