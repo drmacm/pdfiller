@@ -1,7 +1,6 @@
-using System;
 using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.PDFManipulation.Tests
 {
     public class PdfPlaygroundTests
     {

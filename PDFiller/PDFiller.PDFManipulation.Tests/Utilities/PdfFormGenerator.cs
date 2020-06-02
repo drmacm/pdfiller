@@ -1,11 +1,12 @@
-﻿using iText.Forms;
+﻿using System.Collections.Generic;
+using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using System.Collections.Generic;
+using PDFiller.Domain;
 
-namespace PDFiller.Domain.Tests.Utilities
+namespace PDFiller.PDFManipulation.Tests.Utilities
 {
     public static class PdfFormGenerator
     {

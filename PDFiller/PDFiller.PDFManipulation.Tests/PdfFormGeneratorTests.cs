@@ -1,9 +1,9 @@
-﻿using iText.Forms.Fields;
-using PDFiller.Domain.Tests.Utilities;
-using System.IO;
+﻿using System.IO;
+using PDFiller.Domain;
+using PDFiller.PDFManipulation.Tests.Utilities;
 using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.PDFManipulation.Tests
 {
     public class PdfFormGeneratorTests
     {

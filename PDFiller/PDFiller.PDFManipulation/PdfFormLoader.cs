@@ -1,11 +1,11 @@
-﻿using Common.Logging.Factory;
+﻿using System.Collections.Generic;
 using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using System.Collections.Generic;
+using PDFiller.Domain;
 
-namespace PDFiller.Domain
+namespace PDFiller.PDFManipulation
 {
     public static class PdfFormLoader
     {

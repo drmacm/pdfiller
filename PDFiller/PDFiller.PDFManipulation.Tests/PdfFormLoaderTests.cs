@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using Xunit;
+﻿using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.PDFManipulation.Tests
 {
     public class PdfFormLoaderTests
     {

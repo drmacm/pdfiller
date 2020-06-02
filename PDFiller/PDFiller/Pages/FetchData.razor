@@ -1,4 +1,5 @@
 @page "/fetchdata"
+@using PDFiller.PDFManipulation
 @inject HttpClient Http
 @inject Microsoft.JSInterop.IJSRuntime JS
 
@@ -62,7 +63,7 @@ else
         var data = await Http.GetByteArrayAsync("sample-data/src.pdf");
         var formToFill = new MemoryStream(data);
 
-        var pdfPlayground = new PDFiller.Domain.PdfPlayground();
+        var pdfPlayground = new PdfPlayground();
 
         var filledForm = pdfPlayground.FillUpFormAsMemoryStream(formToFill);
 

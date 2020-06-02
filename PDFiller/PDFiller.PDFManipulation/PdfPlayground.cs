@@ -1,13 +1,12 @@
-﻿using iText.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 
-namespace PDFiller.Domain
+namespace PDFiller.PDFManipulation
 {
     public class PdfPlayground
     {

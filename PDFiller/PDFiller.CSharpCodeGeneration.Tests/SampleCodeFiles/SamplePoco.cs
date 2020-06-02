@@ -7,5 +7,10 @@ namespace PDFiller.CodeGeneration.Tests.SampleCodeFiles
     class SamplePoco
     {
         public string Foo { get; set; }
+
+        public string Bar()
+        {
+            return "Baz";
+        }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PDFiller.Domain
+﻿namespace PDFiller.Domain
 {
     public class FormField
     {
