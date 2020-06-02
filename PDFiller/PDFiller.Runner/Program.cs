@@ -1,4 +1,5 @@
 ﻿using System;
+using PDFiller.RazorCodeGeneration;
 
 namespace PDFiller.Runner
 {
@@ -6,7 +7,7 @@ namespace PDFiller.Runner
     {
         static void Main(string[] args)
         {
-           
+           HtmlFormFinder finder = new HtmlFormFinder();
         }
     }
 }

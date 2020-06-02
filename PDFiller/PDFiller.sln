@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.RazorCodeGeneratio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFIller.RazorCodeGeneration.Tests", "PDFIller.RazorCodeGeneration.Tests\PDFIller.RazorCodeGeneration.Tests.csproj", "{BA42D2EA-70A3-4B16-AE24-6A9CEA828847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Runner", "PDFiller.HtmlFormGenerator\PDFiller.Runner.csproj", "{F7277E03-FE42-40DE-B108-BBB67E571BF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Runner", "PDFiller.Runner\PDFiller.Runner.csproj", "{F7277E03-FE42-40DE-B108-BBB67E571BF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.PDFManipulation", "PDFiller.PDFManipulation\PDFiller.PDFManipulation.csproj", "{BE39861D-EFF9-4B97-96F9-4992EEF1CA63}"
 EndProject
