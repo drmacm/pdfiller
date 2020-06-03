@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.Mime;
-using System.Text;
 
-namespace PDFiller.RazorCodeGeneration
+namespace PDFiller.FileManipulation
 {
     public class HtmlFormFinder
     {
@@ -29,7 +26,7 @@ namespace PDFiller.RazorCodeGeneration
                 throw new ArgumentException("Unexpected folder structure.");
             }
 
-            PathToHtmlForm = Path.Join(solutionRoot.FullName, _relativePathToHtmlForm);
+            PathToHtmlForm = Path.Combine(solutionRoot.FullName, _relativePathToHtmlForm);
         }
     }
 }

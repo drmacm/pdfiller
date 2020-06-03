@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Domain", "PDFiller.Domain\PDFiller.Domain.csproj", "{5E519457-CE79-4B46-87F3-766C30EF4075}"
 EndProject
@@ -11,21 +11,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.CSharpCodeGenerati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.CSharpCodeGeneration.Tests", "PDFiller.CSharpCodeGeneration.Tests\PDFiller.CSharpCodeGeneration.Tests.csproj", "{6EA06666-C30F-4EBD-82F6-0532CFFFE0DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.RazorCodeGeneration", "PDFiller.RazorCodeGeneration\PDFiller.RazorCodeGeneration.csproj", "{BFF92243-7CDF-4EB9-B509-B96E528FC3EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.RazorCodeGeneration", "PDFiller.RazorCodeGeneration\PDFiller.RazorCodeGeneration.csproj", "{BFF92243-7CDF-4EB9-B509-B96E528FC3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFIller.RazorCodeGeneration.Tests", "PDFIller.RazorCodeGeneration.Tests\PDFIller.RazorCodeGeneration.Tests.csproj", "{BA42D2EA-70A3-4B16-AE24-6A9CEA828847}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFIller.RazorCodeGeneration.Tests", "PDFIller.RazorCodeGeneration.Tests\PDFIller.RazorCodeGeneration.Tests.csproj", "{BA42D2EA-70A3-4B16-AE24-6A9CEA828847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.Runner", "PDFiller.Runner\PDFiller.Runner.csproj", "{F7277E03-FE42-40DE-B108-BBB67E571BF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Runner", "PDFiller.Runner\PDFiller.Runner.csproj", "{F7277E03-FE42-40DE-B108-BBB67E571BF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.PDFManipulation", "PDFiller.PDFManipulation\PDFiller.PDFManipulation.csproj", "{BE39861D-EFF9-4B97-96F9-4992EEF1CA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.PDFManipulation", "PDFiller.PDFManipulation\PDFiller.PDFManipulation.csproj", "{BE39861D-EFF9-4B97-96F9-4992EEF1CA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.PDFManipulation.Tests", "PDFiller.PDFManipulation.Tests\PDFiller.PDFManipulation.Tests.csproj", "{1F1D9954-A2DA-4F2E-8FBD-88D60F4EF0FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.PDFManipulation.Tests", "PDFiller.PDFManipulation.Tests\PDFiller.PDFManipulation.Tests.csproj", "{1F1D9954-A2DA-4F2E-8FBD-88D60F4EF0FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8CB0B230-8FB4-40E8-BA38-76574328D109}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{0566BCF9-AF28-43E4-B505-3757B0A87CFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller", "PDFiller\PDFiller.csproj", "{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.FileManipulation", "PDFiller.FileManipulation\PDFiller.FileManipulation.csproj", "{8802B60F-3A78-4C78-B5CF-7B330E3A7684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.FileManipulation.Tests", "PDFiller.FileManipulation.Tests\PDFiller.FileManipulation.Tests.csproj", "{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,14 @@ Global
 		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8802B60F-3A78-4C78-B5CF-7B330E3A7684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8802B60F-3A78-4C78-B5CF-7B330E3A7684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8802B60F-3A78-4C78-B5CF-7B330E3A7684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8802B60F-3A78-4C78-B5CF-7B330E3A7684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +98,8 @@ Global
 		{BA42D2EA-70A3-4B16-AE24-6A9CEA828847} = {8CB0B230-8FB4-40E8-BA38-76574328D109}
 		{BE39861D-EFF9-4B97-96F9-4992EEF1CA63} = {0566BCF9-AF28-43E4-B505-3757B0A87CFF}
 		{1F1D9954-A2DA-4F2E-8FBD-88D60F4EF0FE} = {8CB0B230-8FB4-40E8-BA38-76574328D109}
+		{8802B60F-3A78-4C78-B5CF-7B330E3A7684} = {0566BCF9-AF28-43E4-B505-3757B0A87CFF}
+		{92DE5EA0-DB44-40DF-A1FB-21E9044E7F8C} = {8CB0B230-8FB4-40E8-BA38-76574328D109}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1F650CC-A5C0-4533-9FA9-A6946F3CDAB8}

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using PDFiller.RazorCodeGeneration;
 using Xunit;
 
-namespace PDFIller.RazorCodeGeneration.Tests
+namespace PDFiller.FileManipulation.Tests
 {
     public class HtmlFormFinderTests
     {
@@ -28,7 +25,7 @@ namespace PDFIller.RazorCodeGeneration.Tests
 
             var exception = Assert.Throws<ArgumentException>(func);
 
-            Assert.Equal("Unexpected folder structure", exception.Message);
+            Assert.Equal("Unexpected folder structure.", exception.Message);
         }
 
         [Fact]
