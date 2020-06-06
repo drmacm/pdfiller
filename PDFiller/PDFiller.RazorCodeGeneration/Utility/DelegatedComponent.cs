@@ -7,6 +7,7 @@ namespace PDFiller.RazorCodeGeneration.Utility
     /// <summary>
     /// Component used to generate HTML markup from the <see cref="RenderFragment"/>,
     /// with the help of <see cref="Bunit"/> library and <see cref="TestContext"/>.
+    /// The actual fragment to be rendered is passed from outside via the <see cref="Component"/> property.
     /// </summary>
     public class DelegatedComponent : ComponentBase
     {
@@ -17,7 +18,7 @@ namespace PDFiller.RazorCodeGeneration.Utility
         public static string ComponentPropertyName = nameof(Component);
 
         /// <summary>
-        /// Represents the HTML fragment that will be rendered.
+        /// Represents the HTML fragment that will be rendered. Actual value is passed from outside.
         /// </summary>
         [Parameter] public RenderFragment Component { get; set; }
 
