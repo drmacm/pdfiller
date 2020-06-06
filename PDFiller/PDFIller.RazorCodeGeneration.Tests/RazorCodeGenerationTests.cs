@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Bunit;
+using Microsoft.AspNetCore.Components;
+using PDFIller.RazorCodeGeneration.Tests.Utility;
 using Xunit;
-using Bunit;
-using PDFiller.RazorCodeGeneration.Tests.Utility;
 
 namespace PDFiller.RazorCodeGeneration.Tests
 {

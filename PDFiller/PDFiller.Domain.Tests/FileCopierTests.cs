@@ -2,7 +2,7 @@
 using System.IO;
 using Xunit;
 
-namespace PDFiller.FileManipulation.Tests
+namespace PDFiller.Domain.Tests
 {
     public class FileCopierTests
     {
