@@ -36,7 +36,50 @@ namespace PDFiller.RazorCodeGeneration.Tests
 
             var formHtml = htmlFormGenerator.GenerateForm(new List<FormField> { formField });
 
-            Assert.Equal($@"<label for=""foo"">foo</label>{Environment.NewLine}<input id=""foo"" name=""foo"" required=""required"" />", formHtml);
+            var expectedHtml =
+                $@"<label for=""foo"">foo</label>
+<input id=""foo"" name=""foo"" required=""required"" />";
+            
+            Assert.Equal(expectedHtml, formHtml);
+        }
+
+
+        [Fact]
+        public void GenerateForm_SingleCheckboxField_ShouldReturnHtmlInputElement()
+        {
+            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var formField = new FormField("foo", FormFieldType.CheckBox);
+
+            var formHtml = htmlFormGenerator.GenerateForm(new List<FormField> { formField });
+
+            var expectedHtml =
+                @"<label for=""foo"">foo</label>
+<input id=""foo"" name=""foo"" type=""checkbox"" required=""required"" />";
+
+            Assert.Equal(expectedHtml, formHtml);
+        }
+
+        [Fact]
+        public void GenerateForm_TextFieldAndCheckboxField_ShouldReturnTwoInputElements()
+        {
+            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            
+            var formFields = new List<FormField>
+            {
+                new FormField("foo", FormFieldType.TextBox),
+                new FormField("bar", FormFieldType.CheckBox),
+            };
+
+            var formHtml = htmlFormGenerator.GenerateForm(formFields);
+
+            var expectedHtml =
+                @"<label for=""foo"">foo</label>
+<input id=""foo"" name=""foo"" required=""required"" />
+
+<label for=""bar"">bar</label>
+<input id=""bar"" name=""bar"" type=""checkbox"" required=""required"" />";
+
+            Assert.Equal(expectedHtml, formHtml);
         }
     }
 }
