@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using PDFiller.Domain;
-using PDFiller.PDFManipulation.Tests.Utilities;
 using Xunit;
 
 namespace PDFiller.PDFManipulation.Tests

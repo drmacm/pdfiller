@@ -6,7 +6,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using PDFiller.Domain;
 
-namespace PDFiller.PDFManipulation.Tests.Utilities
+namespace PDFiller.PDFManipulation
 {
     public static class PdfFormGenerator
     {
