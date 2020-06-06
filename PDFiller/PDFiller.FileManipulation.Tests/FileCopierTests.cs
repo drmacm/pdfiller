@@ -4,20 +4,12 @@ using Xunit;
 
 namespace PDFiller.FileManipulation.Tests
 {
-    public class PdfFormCopierTests
+    public class FileCopierTests
     {
-        private readonly PdfFormFinder _pdfFormFinder;
-        private readonly PdfFormCopier _pdfFormCopier;
-        public PdfFormCopierTests()
-        {
-            _pdfFormFinder = new PdfFormFinder(AppDomain.CurrentDomain.BaseDirectory);
-            _pdfFormCopier = new PdfFormCopier(_pdfFormFinder);
-        }
-        
         [Fact]
         public void CopyPdfFormToBlazorProject_PdfFormSourceNotProvided_ShouldThrow()
         {
-            Action action = () => _pdfFormCopier.CopyPdfFormToBlazorProject(string.Empty);
+            Action action = () => FileCopier.CopyPdfFormToBlazorProject(string.Empty, string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -27,7 +19,7 @@ namespace PDFiller.FileManipulation.Tests
         [Fact]
         public void CopyPdfFormToBlazorProject_InvalidPathToPdfFormSource_ShouldThrow()
         {
-            Action action = () => _pdfFormCopier.CopyPdfFormToBlazorProject(@"C:\IShouldNotExist.pdf");
+            Action action = () => FileCopier.CopyPdfFormToBlazorProject(@"C:\IShouldNotExist.pdf", string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -37,7 +29,8 @@ namespace PDFiller.FileManipulation.Tests
         [Fact]
         public void CanCopyPdfFormFile()
         {
-            var pdfFormDestination = _pdfFormFinder.GetPathToPdfForm();
+            var pdfFormFinder = new PdfFormFinder(AppDomain.CurrentDomain.BaseDirectory);
+            var pdfFormDestination = pdfFormFinder.GetPathToPdfForm();
             if (File.Exists(pdfFormDestination))
             {
                 File.Delete(pdfFormDestination);
@@ -45,9 +38,8 @@ namespace PDFiller.FileManipulation.Tests
 
             Assert.False(File.Exists(pdfFormDestination));
 
-
             var pdfFormSource = @"SamplePDFs\PRP-1-bos.pdf";
-            _pdfFormCopier.CopyPdfFormToBlazorProject(pdfFormSource);
+            FileCopier.CopyPdfFormToBlazorProject(pdfFormSource, pdfFormDestination);
 
             Assert.True(File.Exists(pdfFormDestination));
         }
