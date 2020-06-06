@@ -12,6 +12,7 @@ namespace PDFiller.FileManipulation.Tests
             Action action = () => new PdfFormFinder(string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
+          
             Assert.Equal("Expecting a path to the folder of the executable.", exception.Message);
         }
 
@@ -20,10 +21,10 @@ namespace PDFiller.FileManipulation.Tests
         {
             var applicationFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)?.Parent;
             var pdfFormFinder = new PdfFormFinder(applicationFolder.FullName);
-
             Action action = () => pdfFormFinder.GetPathToPdfForm();
 
             var exception = Assert.Throws<ArgumentException>(action);
+            
             Assert.Equal("Unexpected folder structure.", exception.Message);
         }
 

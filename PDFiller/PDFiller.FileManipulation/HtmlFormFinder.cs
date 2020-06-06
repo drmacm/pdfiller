@@ -5,10 +5,10 @@ namespace PDFiller.FileManipulation
 {
     public class HtmlFormFinder
     {
+        private readonly string _applicationFolder;
+
         private readonly string _solutionFolder = "PDFiller";
         private readonly string _relativePathToHtmlForm = @"PDFiller\Pages\HtmlForm.razor";
-      
-        public string PathToHtmlForm { get; }
 
         public HtmlFormFinder(string applicationFolder)
         {
@@ -16,8 +16,12 @@ namespace PDFiller.FileManipulation
             {
                 throw new ArgumentException("Expecting a path to the folder of the executable.");
             }
+            _applicationFolder = applicationFolder;
+        }
 
-            var dir = new DirectoryInfo(applicationFolder);
+        public string GetPathToHtmlForm()
+        {
+            var dir = new DirectoryInfo(_applicationFolder);
 
             //Expecting something like ...[SOLUTION]\[PROJECT]\bin\Debug\netcoreapp3.1\
             var solutionRoot = dir?.Parent?.Parent?.Parent?.Parent;
@@ -26,7 +30,7 @@ namespace PDFiller.FileManipulation
                 throw new ArgumentException("Unexpected folder structure.");
             }
 
-            PathToHtmlForm = Path.Combine(solutionRoot.FullName, _relativePathToHtmlForm);
+            return Path.Combine(solutionRoot.FullName, _relativePathToHtmlForm);
         }
     }
 }

@@ -9,9 +9,9 @@ namespace PDFiller.FileManipulation.Tests
         [Fact]
         public void ApplicationFolderEmptyString_ShouldThrow()
         {
-            Action func = () => new HtmlFormFinder(string.Empty);
+            Action action = () => new HtmlFormFinder(string.Empty);
 
-            var exception = Assert.Throws<ArgumentException>(func);
+            var exception = Assert.Throws<ArgumentException>(action);
 
             Assert.Equal("Expecting a path to the folder of the executable.", exception.Message);
         }
@@ -21,9 +21,10 @@ namespace PDFiller.FileManipulation.Tests
         {
             
             var applicationFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)?.Parent;
-            Action func = () => new HtmlFormFinder(applicationFolder.FullName);
+            var htmlFormFinder = new HtmlFormFinder(applicationFolder.FullName);
+            Action action = () => htmlFormFinder.GetPathToHtmlForm();
 
-            var exception = Assert.Throws<ArgumentException>(func);
+            var exception = Assert.Throws<ArgumentException>(action);
 
             Assert.Equal("Unexpected folder structure.", exception.Message);
         }
@@ -32,10 +33,11 @@ namespace PDFiller.FileManipulation.Tests
         public void CanReachHtmlFormFile()
         {
             var htmlFormFinder = new HtmlFormFinder(AppDomain.CurrentDomain.BaseDirectory);
-
-            var pathToHtmlForm = htmlFormFinder.PathToHtmlForm;
-
-            Assert.True(File.Exists(pathToHtmlForm));
+            
+            var result = htmlFormFinder.GetPathToHtmlForm();
+            var htmlFormFile = new FileInfo(result);
+            
+            Assert.Equal("HtmlForm.razor", htmlFormFile.Name);
         }
     }
 }
