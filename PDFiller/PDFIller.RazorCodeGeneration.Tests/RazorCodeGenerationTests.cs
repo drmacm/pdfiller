@@ -1,6 +1,6 @@
 ﻿using Bunit;
 using Microsoft.AspNetCore.Components;
-using PDFIller.RazorCodeGeneration.Tests.Utility;
+using PDFiller.RazorCodeGeneration.Utility;
 using Xunit;
 
 namespace PDFiller.RazorCodeGeneration.Tests
@@ -8,8 +8,6 @@ namespace PDFiller.RazorCodeGeneration.Tests
     public class RazorCodeGenerationTests
     {
         private readonly TestContext _testContext;
-
-        private readonly string _parameterName = "Component";
 
         public RazorCodeGenerationTests()
         {
@@ -26,7 +24,7 @@ namespace PDFiller.RazorCodeGeneration.Tests
                 builder.CloseElement();
             };
 
-            var cut = _testContext.RenderComponent<DelegatedComponent>((_parameterName, component));
+            var cut = _testContext.RenderComponent<DelegatedComponent>((DelegatedComponent.ComponentPropertyName, component));
             var markup = cut.Markup;
 
             Assert.Equal("<div>Generated component</div>", markup);
