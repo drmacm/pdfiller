@@ -1,3 +1,32 @@
-<form>
+@using PDFiller.Services
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+<EditForm Model="@_formModel" OnValidSubmit="ExportToPdf">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="_formModel.Name" />
+    
     <!--[FORM_FIELDS_PLACEHOLDER]-->
-</form>
+    
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    private readonly FormModel _formModel = new FormModel();
+}
+
+
+@functions {
+    async Task ExportToPdf()
+    {
+        var data = await Http.GetByteArrayAsync("sample-data/src.pdf");
+        var formToFill = new MemoryStream(data);
+
+        var pdfFormFillingService = new PdfFormFillingService();
+        var filledForm = pdfFormFillingService.FillForm(formToFill, _formModel);
+
+        await JS.SaveAs("FilledForm.pdf", filledForm.ToArray());
+    }
+}
