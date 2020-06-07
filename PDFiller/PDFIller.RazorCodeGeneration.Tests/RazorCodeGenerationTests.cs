@@ -1,6 +1,5 @@
 ﻿using Bunit;
 using Microsoft.AspNetCore.Components;
-using PDFiller.RazorCodeGeneration.Utility;
 using Xunit;
 
 namespace PDFiller.RazorCodeGeneration.Tests

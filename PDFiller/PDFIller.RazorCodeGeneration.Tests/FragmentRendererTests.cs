@@ -25,14 +25,14 @@ namespace PDFiller.RazorCodeGeneration.Tests
         public void ParagraphRenderFragment_ShouldReturnHTML()
         {
             var fragmentRenderer = new FragmentRenderer();
-            
-            static void Paragraph(RenderTreeBuilder builder)
+
+            RenderFragment paragraph = builder =>
             {
                 builder.OpenElement(0, "p");
                 builder.CloseElement();
-            }
+            };
 
-            var result = fragmentRenderer.Render(Paragraph);
+            var result = fragmentRenderer.Render(paragraph);
 
             Assert.Equal("<p></p>", result);
         }

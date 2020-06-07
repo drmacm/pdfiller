@@ -1,7 +1,6 @@
 ﻿using System;
 using Bunit;
 using Microsoft.AspNetCore.Components;
-using PDFiller.RazorCodeGeneration.Utility;
 
 namespace PDFiller.RazorCodeGeneration
 {
@@ -10,6 +9,10 @@ namespace PDFiller.RazorCodeGeneration
         string Render(RenderFragment renderFragment);
     }
 
+    /// <summary>
+    /// Generates HTML markup based on <see cref="RenderFragment"/> object.
+    /// Relies on <see cref="Bunit"/>'s <see cref="TestContextBase.Renderer"/>.
+    /// </summary>
     public class FragmentRenderer : IFragmentRenderer
     {
         private readonly TestContext _testContext;

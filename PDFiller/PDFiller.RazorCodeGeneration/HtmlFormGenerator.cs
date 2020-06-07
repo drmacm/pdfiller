@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Bunit;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
 using PDFiller.Domain;
-using PDFiller.RazorCodeGeneration.Utility;
+using PDFiller.RazorCodeGeneration.Fragments;
 
 namespace PDFiller.RazorCodeGeneration
 {
@@ -54,8 +52,8 @@ namespace PDFiller.RazorCodeGeneration
 
         private string RenderTextInputWithLabel(FormField formField)
         {
-            var labelMarkup = RenderLabel(formField);
-            var textInputMarkup = RenderTextInput(formField);
+            var labelMarkup = Render(formField.Label());
+            var textInputMarkup = Render(formField.TextBox());
 
             var markup = string.Join(Environment.NewLine, labelMarkup, textInputMarkup);
 
@@ -64,54 +62,17 @@ namespace PDFiller.RazorCodeGeneration
 
         private string RenderCheckboxInputWithLabel(FormField formField)
         {
-            var labelMarkup = RenderLabel(formField);
-            var checkboxInputMarkup = RenderCheckboxInput(formField);
+            var labelMarkup = Render(formField.Label());
+            var checkboxInputMarkup = Render(formField.CheckBox());
 
             var markup = string.Join(Environment.NewLine, labelMarkup, checkboxInputMarkup);
 
             return markup;
         }
 
-        private string RenderLabel(FormField formField)
+        private string Render(RenderFragment fragmentBuilder)
         {
-            void Label(RenderTreeBuilder builder)
-            {
-                builder.OpenElement(0, "label");
-                builder.AddAttribute(0, "for", formField.FieldName);
-                builder.AddContent(0, formField.FieldName);
-                builder.CloseElement();
-            }
-
-            return _fragmentRenderer.Render(Label);
-        }
-
-        private string RenderTextInput(FormField formField)
-        {
-            void TextInput(RenderTreeBuilder builder)
-            {
-                builder.OpenElement(0, "input");
-                builder.AddAttribute(0, "id", formField.FieldName);
-                builder.AddAttribute(0, "name", formField.FieldName);
-                builder.AddAttribute(0, "required", "required");
-                builder.CloseElement();
-            }
-
-            return _fragmentRenderer.Render(TextInput);
-        }
-
-        private string RenderCheckboxInput(FormField formField)
-        {
-            void TextInput(RenderTreeBuilder builder)
-            {
-                builder.OpenElement(0, "input");
-                builder.AddAttribute(0, "id", formField.FieldName);
-                builder.AddAttribute(0, "name", formField.FieldName);
-                builder.AddAttribute(0, "type", "checkbox");
-                builder.AddAttribute(0, "required", "required");
-                builder.CloseElement();
-            }
-
-            return _fragmentRenderer.Render(TextInput);
+            return _fragmentRenderer.Render(fragmentBuilder);
         }
     }
 }
