@@ -20,10 +20,11 @@ namespace PDFiller.Runner
             if (string.IsNullOrEmpty(pdfFormSource))
             {
                 pdfFormSource = @"SamplePDFs\TextBoxForm.pdf";
+                //pdfFormSource = @"SamplePDFs\PRP-1-bos.pdf";
             }
 
             var applicationFolder = AppDomain.CurrentDomain.BaseDirectory;
-            PdfFormFinder pdfFormFinder = new PdfFormFinder(applicationFolder);
+            var pdfFormFinder = new PdfFormFinder(applicationFolder);
             var pdfFormDestination = pdfFormFinder.GetPathToPdfForm();
             
             FileCopier.CopyPdfFormToBlazorProject(pdfFormSource, pdfFormDestination);
