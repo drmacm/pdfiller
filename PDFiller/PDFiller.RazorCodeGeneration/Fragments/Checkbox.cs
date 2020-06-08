@@ -10,8 +10,8 @@ namespace PDFiller.RazorCodeGeneration.Fragments
             return builder =>
             {
                 builder.OpenElement(0, "input");
-                builder.AddAttribute(0, "id", formField.ProcessedFieldName);
-                builder.AddAttribute(0, "name", formField.ProcessedFieldName);
+                builder.AddAttribute(0, "id", formField.HtmlFieldName);
+                builder.AddAttribute(0, "name", formField.HtmlFieldName);
                 builder.AddAttribute(0, "type", "checkbox");
                 builder.AddAttribute(0, "required", "required");
                 builder.CloseElement();

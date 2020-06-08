@@ -10,15 +10,17 @@ namespace PDFiller.Domain
         
         public bool IsRequired { get; private set; }
 
-        public string ProcessedFieldName { get; }
-        
+        public string HtmlFieldName { get; }
+
+        public string CSharpFieldName { get; }
+
         public FormField(string fieldName, FormFieldType fieldType)
         {
             FieldName = fieldName;
             FieldType = fieldType;
             IsRequired = true;
 
-            ProcessedFieldName = FieldNameCleaner.Clean(FieldName);
+            HtmlFieldName = FieldNameSanitizer.SanitizeForHtml(FieldName);
         }
 
         public void MakeOptional()

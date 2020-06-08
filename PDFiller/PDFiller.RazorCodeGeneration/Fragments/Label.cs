@@ -10,7 +10,7 @@ namespace PDFiller.RazorCodeGeneration.Fragments
             return builder =>
             {
                 builder.OpenElement(0, "label");
-                builder.AddAttribute(0, "for", formField.ProcessedFieldName);
+                builder.AddAttribute(0, "for", formField.HtmlFieldName);
                 builder.AddContent(0, formField.FieldName);
                 builder.CloseElement();
             };
