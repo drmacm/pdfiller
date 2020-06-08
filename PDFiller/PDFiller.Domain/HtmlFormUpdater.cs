@@ -25,7 +25,7 @@ namespace PDFiller.Domain
 
             var existingFormMarkup = File.ReadAllText(pathToHtmlForm);
 
-            var updatedFormMarkup = existingFormMarkup.Replace(_placeholder, formMarkup);
+            var updatedFormMarkup = existingFormMarkup.Replace(_placeholder, _placeholder + Environment.NewLine + formMarkup);
 
             File.WriteAllText(pathToHtmlForm, updatedFormMarkup);
         }
