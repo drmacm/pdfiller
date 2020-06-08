@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SampleCodeFiles\SampleFormModel.cs" />
     <Compile Remove="SampleCodeFiles\SamplePoco.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="SampleCodeFiles\SampleFormModel.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SampleCodeFiles\SamplePoco.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

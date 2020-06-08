@@ -7,11 +7,11 @@ using Xunit;
 
 namespace PDFiller.CSharpCodeGeneration.Tests
 {
-    public class CSharpCodeGeneratorTests
+    public class CSharpSyntaxTreeTests
     {
         private readonly SyntaxTree _syntaxTree;
 
-        public CSharpCodeGeneratorTests()
+        public CSharpSyntaxTreeTests()
         {
             var fileName = @"SampleCodeFiles\SamplePoco.cs";
             var sourceCode = File.ReadAllText(fileName);
