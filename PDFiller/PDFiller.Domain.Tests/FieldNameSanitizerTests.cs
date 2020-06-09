@@ -55,6 +55,14 @@ namespace PDFiller.Domain.Tests
         }
 
         [Fact]
+        public void SanitizeForCSharp_StringWithDots_Sanitized()
+        {
+            var result = FieldNameSanitizer.SanitizeForCSharp("nice.name");
+
+            Assert.Equal("Nice_Name", result);
+        }
+
+        [Fact]
         public void SanitizeForCSharp_StringInLowercaseWithSpacesAndDiacritics_Sanitized()
         {
             var result = FieldNameSanitizer.SanitizeForCSharp("ččČ ććĆ đ à É");

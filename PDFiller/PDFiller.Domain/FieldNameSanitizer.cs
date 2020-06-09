@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using Diacritics;
 using Diacritics.Extensions;
 
 namespace PDFiller.Domain
@@ -14,16 +13,24 @@ namespace PDFiller.Domain
         public static string SanitizeForCSharp(string input)
         {
             var titleCaseInput = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input);
-            return RemoveSpaces(titleCaseInput).RemoveDiacritics();
+            return RemoveSpaces(titleCaseInput)
+                .RemoveDots()
+                .RemoveDiacritics();
         }
 
         private static string ReplaceSpaces(string input)
         {
             return input.Replace(" ", "-");
         }
+        
         private static string RemoveSpaces(string input)
         {
             return input.Replace(" ", "");
+        }
+        
+        private static string RemoveDots(this string input)
+        {
+            return input.Replace(".", "_");
         }
     }
 }
