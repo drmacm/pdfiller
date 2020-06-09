@@ -3,11 +3,11 @@ using System.IO;
 
 namespace PDFiller.Domain.FileFinders
 {
-    public class CSharpFormModelFinder : FileFinder
+    public class FormModelFinder : FileFinder
     {
         private static readonly string RelativePathToHtmlForm = @"PDFiller\Models\FormModel.cs";
 
-        public CSharpFormModelFinder(string applicationFolder) : base(applicationFolder, RelativePathToHtmlForm)
+        public FormModelFinder(string applicationFolder) : base(applicationFolder, RelativePathToHtmlForm)
         {
         }
     }

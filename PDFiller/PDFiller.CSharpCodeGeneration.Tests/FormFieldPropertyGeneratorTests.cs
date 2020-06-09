@@ -8,12 +8,12 @@ using Xunit;
 
 namespace PDFiller.CSharpCodeGeneration.Tests
 {
-    public class FormModelGeneratorTests
+    public class FormFieldPropertyGeneratorTests
     {
         private readonly char[] _newLineChars;
         private readonly SyntaxTree _syntaxTree;
 
-        public FormModelGeneratorTests()
+        public FormFieldPropertyGeneratorTests()
         {
             _newLineChars = Environment.NewLine.ToCharArray();
             var fileName = @"SampleCodeFiles\SampleFormModel.cs";
@@ -33,7 +33,7 @@ namespace PDFiller.CodeGeneration.Tests.SampleCodeFiles
     }
 }".TrimStart(_newLineChars);
 
-            var formModelGenerator = new FormModelGenerator(null);
+            var formModelGenerator = new FormFieldPropertyGenerator(null);
             var result = formModelGenerator.Visit(_syntaxTree.GetRoot()).ToFullString();
 
             Assert.Equal(expectedResult, result);
@@ -50,7 +50,7 @@ namespace PDFiller.CodeGeneration.Tests.SampleCodeFiles
     }
 }".TrimStart(_newLineChars);
 
-            var formModelGenerator = new FormModelGenerator(new List<FormField>());
+            var formModelGenerator = new FormFieldPropertyGenerator(new List<FormField>());
             var result = formModelGenerator.Visit(_syntaxTree.GetRoot()).ToFullString();
 
             Assert.Equal(expectedResult, result);
@@ -78,7 +78,7 @@ namespace PDFiller.CodeGeneration.Tests.SampleCodeFiles
                 new FormField("some bool property č", FormFieldType.CheckBox),
             };
 
-            var formModelGenerator = new FormModelGenerator(formFields);
+            var formModelGenerator = new FormFieldPropertyGenerator(formFields);
             var result = formModelGenerator.Visit(_syntaxTree.GetRoot()).ToFullString();
 
             Assert.Equal(expectedResult, result);

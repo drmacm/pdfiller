@@ -3,7 +3,7 @@ using System.IO;
 
 namespace PDFiller.Domain.FileUpdaters
 {
-    public class CSharpFormModelUpdater
+    public class FormModelUpdater
     {
         public void UpdateFormModel(string pathToFormModel, string sourceCode)
         {
