@@ -21,6 +21,7 @@ namespace PDFiller.Domain
             IsRequired = true;
 
             HtmlFieldName = FieldNameSanitizer.SanitizeForHtml(FieldName);
+            CSharpFieldName = FieldNameSanitizer.SanitizeForCSharp(FieldName);
         }
 
         public void MakeOptional()
