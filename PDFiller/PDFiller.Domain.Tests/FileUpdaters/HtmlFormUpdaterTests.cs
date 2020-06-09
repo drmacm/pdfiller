@@ -57,6 +57,7 @@ namespace PDFiller.Domain.Tests.FileUpdaters
             Assert.DoesNotContain(formMarkup, originalHtmlFormContent);
 
             htmlFormUpdater.UpdateHtmlFormInBlazorProject(pathToHtmlForm, formMarkup);
+          
             var newHtmlFormContent = File.ReadAllText(pathToHtmlForm);
             Assert.Contains(formMarkup, newHtmlFormContent);
 
