@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using PDFiller.Domain.FileFinders;
 using Xunit;
 
 namespace PDFiller.Domain.Tests
@@ -35,7 +36,7 @@ namespace PDFiller.Domain.Tests
         public void UpdateHtmlFormInBlazorProject_FormMarkupNotProvided_ShouldThrow()
         {
             var htmlFormFinder = new HtmlFormFinder(AppDomain.CurrentDomain.BaseDirectory);
-            var pathToHtmlForm = htmlFormFinder.GetPathToHtmlForm();
+            var pathToHtmlForm = htmlFormFinder.GetPath();
             var htmlFormUpdater = new HtmlFormUpdater();
             Action action = () => htmlFormUpdater.UpdateHtmlFormInBlazorProject(pathToHtmlForm, string.Empty);
 
@@ -48,7 +49,7 @@ namespace PDFiller.Domain.Tests
         public void CanUpdateHtmlForm()
         {
             var htmlFormFinder = new HtmlFormFinder(AppDomain.CurrentDomain.BaseDirectory);
-            var pathToHtmlForm = htmlFormFinder.GetPathToHtmlForm();
+            var pathToHtmlForm = htmlFormFinder.GetPath();
             var formMarkup = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture);
 
             var htmlFormUpdater = new HtmlFormUpdater();

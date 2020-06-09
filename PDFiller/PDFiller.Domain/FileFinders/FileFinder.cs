@@ -1,26 +1,31 @@
 ﻿using System;
 using System.IO;
 
-namespace PDFiller.Domain
+namespace PDFiller.Domain.FileFinders
 {
-    public class PdfFormFinder
+    public class FileFinder
     {
         private readonly string _applicationFolder;
-       
-        private readonly string _solutionFolder = "PDFiller";
-        private readonly string _relativePathToPdfForm = @"PDFiller\wwwroot\sample-data\src.pdf";
-
-        public PdfFormFinder(string applicationFolder)
+        private readonly string _solutionFolder;
+        private readonly string _relativePath;
+        
+        protected FileFinder(string applicationFolder, string relativePath)
         {
+            _solutionFolder = "PDFiller";
             if (string.IsNullOrEmpty(applicationFolder))
             {
                 throw new ArgumentException("Expecting a path to the folder of the executable.");
             }
-
             _applicationFolder = applicationFolder;
+            if (string.IsNullOrEmpty(relativePath))
+            {
+                throw new ArgumentException("Expecting a relative path to the desired file.");
+            }
+
+            _relativePath = relativePath;
         }
 
-        public string GetPathToPdfForm()
+        public string GetPath()
         {
             var dir = new DirectoryInfo(_applicationFolder);
 
@@ -31,7 +36,7 @@ namespace PDFiller.Domain
                 throw new ArgumentException("Unexpected folder structure.");
             }
 
-            return Path.Combine(solutionRoot.FullName, _relativePathToPdfForm);
+            return Path.Combine(solutionRoot.FullName, _relativePath);
         }
     }
 }

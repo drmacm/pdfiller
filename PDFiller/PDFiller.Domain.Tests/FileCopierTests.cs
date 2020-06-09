@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using PDFiller.Domain.FileFinders;
 using Xunit;
 
 namespace PDFiller.Domain.Tests
@@ -30,7 +31,7 @@ namespace PDFiller.Domain.Tests
         public void CanCopyPdfFormFile()
         {
             var pdfFormFinder = new PdfFormFinder(AppDomain.CurrentDomain.BaseDirectory);
-            var pdfFormDestination = pdfFormFinder.GetPathToPdfForm();
+            var pdfFormDestination = pdfFormFinder.GetPath();
             if (File.Exists(pdfFormDestination))
             {
                 File.Delete(pdfFormDestination);

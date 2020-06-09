@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using PDFiller.Domain;
+using PDFiller.Domain.FileFinders;
 using PDFiller.RazorCodeGeneration;
 
 namespace PDFiller.Runner
@@ -14,8 +15,8 @@ namespace PDFiller.Runner
             var pdfFormFinder = new PdfFormFinder(applicationFolder);
             var htmlFormFinder = new HtmlFormFinder(applicationFolder);
 
-            var pathToPdfForm = pdfFormFinder.GetPathToPdfForm();
-            var pathToHtmlForm = htmlFormFinder.GetPathToHtmlForm();
+            var pathToPdfForm = pdfFormFinder.GetPath();
+            var pathToHtmlForm = htmlFormFinder.GetPath();
             
             CopyPdfFormToWebsite(pathToPdfForm);
 
