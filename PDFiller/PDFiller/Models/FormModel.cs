@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PDFiller
+namespace PDFiller.Models
 {
     public class FormModel
     {

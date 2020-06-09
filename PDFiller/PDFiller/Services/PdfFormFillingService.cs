@@ -4,6 +4,7 @@ using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using PDFiller.Models;
 
 namespace PDFiller.Services
 {

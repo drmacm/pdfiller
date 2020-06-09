@@ -17,6 +17,7 @@ namespace PDFiller.Domain.FileFinders
                 throw new ArgumentException("Expecting a path to the folder of the executable.");
             }
             _applicationFolder = applicationFolder;
+          
             if (string.IsNullOrEmpty(relativePath))
             {
                 throw new ArgumentException("Expecting a relative path to the desired file.");
