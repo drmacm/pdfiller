@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using PDFiller.Domain.FileFinders;
+using PDFiller.Domain.FileUpdaters;
 using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.Domain.Tests.FileUpdaters
 {
     public class HtmlFormUpdaterTests
     {

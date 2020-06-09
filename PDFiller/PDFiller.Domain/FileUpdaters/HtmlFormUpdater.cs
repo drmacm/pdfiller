@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace PDFiller.Domain
+namespace PDFiller.Domain.FileUpdaters
 {
     public class HtmlFormUpdater
     {
