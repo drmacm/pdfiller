@@ -1,8 +1,13 @@
 ﻿using PDFiller.PDFManipulation;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Common.Logging.Factory;
+using iText.Svg.Renderers.Path.Impl;
+using PDFiller.CSharpCodeGeneration;
 using PDFiller.Domain;
 using PDFiller.Domain.FileFinders;
+using PDFiller.Domain.FileUpdaters;
 using PDFiller.RazorCodeGeneration;
 
 namespace PDFiller.Runner
@@ -14,10 +19,12 @@ namespace PDFiller.Runner
             var applicationFolder = AppDomain.CurrentDomain.BaseDirectory;
             var pdfFormFinder = new PdfFormFinder(applicationFolder);
             var htmlFormFinder = new HtmlFormFinder(applicationFolder);
+            var formModelFinder = new FormModelFinder(applicationFolder);
 
             var pathToPdfForm = pdfFormFinder.GetPath();
             var pathToHtmlForm = htmlFormFinder.GetPath();
-            
+            var pathToFormModel = formModelFinder.GetPath();
+
             CopyPdfFormToWebsite(pathToPdfForm);
 
             var formFields = GetFormFields(pathToPdfForm);
@@ -26,6 +33,10 @@ namespace PDFiller.Runner
             var formMarkup = GenerateHtmlForFormFields(filteredFormFields);
 
             UpdateHtmlForm(formMarkup, pathToHtmlForm);
+
+            var formModelContent = GenerateFormModel(formFields, pathToFormModel);
+
+            UpdateFormModel(pathToFormModel, formModelContent);
         }
 
         private static void CopyPdfFormToWebsite(string pathToPdfForm)
@@ -104,6 +115,21 @@ namespace PDFiller.Runner
         {
             var htmlFormUpdater = new HtmlFormUpdater();
             htmlFormUpdater.UpdateHtmlFormInBlazorProject(pathToHtmlForm, formMarkup);
+        }
+
+        private static string GenerateFormModel(List<FormField> formFields, string pathToFormModel)
+        {
+            var formModelGenerator = new FormModelGenerator();
+            var formModelContent = formModelGenerator.Generate(formFields, pathToFormModel);
+
+            return formModelContent;
+        }
+
+        private static string UpdateFormModel(string pathToFormModel, string formModelContent)
+        {
+            var formModelUpdater = new FormModelUpdater();
+            formModelUpdater.UpdateFormModel(pathToFormModel, formModelContent);
+            return null;
         }
     }
 }
