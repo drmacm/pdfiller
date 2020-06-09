@@ -16,7 +16,7 @@ namespace PDFiller.Domain.Tests.FileFinders
             var result = csharpFormModelFinder.GetPath();
             var csharpFormModelFile = new FileInfo(result);
 
-            Assert.EndsWith(@"FormModel.cs", result);
+            Assert.Equal(@"FormModel.cs", csharpFormModelFile.Name);
         }
     }
 }
