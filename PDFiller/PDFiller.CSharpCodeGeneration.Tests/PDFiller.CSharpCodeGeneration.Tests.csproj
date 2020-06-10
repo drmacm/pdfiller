@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <Compile Remove="SampleCodeFiles\SampleFormModel.cs" />
+    <Compile Remove="SampleCodeFiles\SamplePdfFormFillingService.cs" />
     <Compile Remove="SampleCodeFiles\SamplePoco.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="SampleCodeFiles\SamplePdfFormFillingService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SampleCodeFiles\SampleFormModel.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
