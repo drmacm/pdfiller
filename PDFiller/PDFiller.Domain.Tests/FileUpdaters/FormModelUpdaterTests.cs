@@ -12,8 +12,8 @@ namespace PDFiller.Domain.Tests.FileUpdaters
         [Fact]
         public void UpdateFormModel_PathToFormModelmNotProvided_ShouldThrow()
         {
-            var cSharpFormModelUpdater = new FormModelUpdater();
-            Action action = () => cSharpFormModelUpdater.UpdateFormModel(string.Empty, string.Empty);
+            var formModelUpdater = new FormModelUpdater();
+            Action action = () => formModelUpdater.UpdateFormModel(string.Empty, string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -23,8 +23,8 @@ namespace PDFiller.Domain.Tests.FileUpdaters
         [Fact]
         public void UpdateFormModel_InvalidPathToFormModel_ShouldThrow()
         {
-            var cSharpFormModelUpdater = new FormModelUpdater();
-            Action action = () => cSharpFormModelUpdater.UpdateFormModel(@"C:\IShouldNotExist.razor", string.Empty);
+            var formModelUpdater = new FormModelUpdater();
+            Action action = () => formModelUpdater.UpdateFormModel(@"C:\IShouldNotExist.razor", string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -34,8 +34,8 @@ namespace PDFiller.Domain.Tests.FileUpdaters
         [Fact]
         public void UpdateFormModel_SourceCodeNotProvided_ShouldThrow()
         {
-            var cSharpFormModelFinder = new FormModelFinder(AppDomain.CurrentDomain.BaseDirectory);
-            var pathToFormModel = cSharpFormModelFinder.GetPath();
+            var formModelFinder = new FormModelFinder(AppDomain.CurrentDomain.BaseDirectory);
+            var pathToFormModel = formModelFinder.GetPath();
             var cSharpFormModelUpdater = new FormModelUpdater();
             Action action = () => cSharpFormModelUpdater.UpdateFormModel(pathToFormModel, string.Empty);
 
@@ -47,16 +47,16 @@ namespace PDFiller.Domain.Tests.FileUpdaters
         [Fact]
         public void CanUpdateFormModel()
         {
-            var cSharpFormModelFinder = new FormModelFinder(AppDomain.CurrentDomain.BaseDirectory);
-            var pathToFormModel = cSharpFormModelFinder.GetPath();
+            var formModelFinder = new FormModelFinder(AppDomain.CurrentDomain.BaseDirectory);
+            var pathToFormModel = formModelFinder.GetPath();
             var formMarkup = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture);
 
-            var cSharpFormModelUpdater = new FormModelUpdater();
+            var formModelUpdater = new FormModelUpdater();
 
             var originalFormModelContent = File.ReadAllText(pathToFormModel);
             Assert.DoesNotContain(formMarkup, originalFormModelContent);
 
-            cSharpFormModelUpdater.UpdateFormModel(pathToFormModel, formMarkup);
+            formModelUpdater.UpdateFormModel(pathToFormModel, formMarkup);
             
             var newFormModelContent = File.ReadAllText(pathToFormModel);
             Assert.Contains(formMarkup, newFormModelContent);

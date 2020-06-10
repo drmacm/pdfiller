@@ -11,12 +11,12 @@ namespace PDFiller.Domain.Tests.FileFinders
         public void CanReachCSharpFormModelFile()
         {
             var applicationFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            var csharpFormModelFinder = new FormModelFinder(applicationFolder.FullName);
+            var formModelFinder = new FormModelFinder(applicationFolder.FullName);
 
-            var result = csharpFormModelFinder.GetPath();
-            var csharpFormModelFile = new FileInfo(result);
+            var result = formModelFinder.GetPath();
+            var formModelFile = new FileInfo(result);
 
-            Assert.Equal(@"FormModel.cs", csharpFormModelFile.Name);
+            Assert.Equal(@"FormModel.cs", formModelFile.Name);
         }
     }
 }
