@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using PDFiller.Domain;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace PDFiller.CSharpCodeGeneration
+namespace PDFiller.WebsiteGenerator.CSharpCodeGeneration
 {
     public class FormFieldPropertyGenerator : CSharpSyntaxRewriter
     {

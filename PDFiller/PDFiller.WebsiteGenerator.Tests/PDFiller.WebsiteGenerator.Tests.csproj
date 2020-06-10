@@ -7,6 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CSharpCodeGeneration\SampleCodeFiles\SampleFormModel.cs" />
+    <Compile Remove="CSharpCodeGeneration\SampleCodeFiles\SamplePdfFormFillingService.cs" />
+    <Compile Remove="CSharpCodeGeneration\SampleCodeFiles\SamplePoco.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CSharpCodeGeneration\SampleCodeFiles\SampleFormModel.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CSharpCodeGeneration\SampleCodeFiles\SamplePdfFormFillingService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CSharpCodeGeneration\SampleCodeFiles\SamplePoco.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bunit" Version="1.0.0-beta-7" />
     <PackageReference Include="itext7" Version="7.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
@@ -15,6 +33,11 @@
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
+    <ProjectReference Include="..\PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,9 +4,10 @@ using System.IO;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using PDFiller.Domain;
+using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 
-namespace PDFiller.CSharpCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
 {
     public class FormFieldPropertyGeneratorTests
     {
@@ -16,7 +17,7 @@ namespace PDFiller.CSharpCodeGeneration.Tests
         public FormFieldPropertyGeneratorTests()
         {
             _newLineChars = Environment.NewLine.ToCharArray();
-            var fileName = @"SampleCodeFiles\SampleFormModel.cs";
+            var fileName = @"CSharpCodeGeneration\SampleCodeFiles\SampleFormModel.cs";
             var sourceCode = File.ReadAllText(fileName);
 
             _syntaxTree = CSharpSyntaxTree.ParseText(sourceCode);

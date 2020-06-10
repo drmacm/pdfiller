@@ -4,7 +4,7 @@ using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 using PDFiller.Domain;
 
-namespace PDFiller.CSharpCodeGeneration
+namespace PDFiller.WebsiteGenerator.CSharpCodeGeneration
 {
     public class PdfFormFillingServiceGenerator
     {

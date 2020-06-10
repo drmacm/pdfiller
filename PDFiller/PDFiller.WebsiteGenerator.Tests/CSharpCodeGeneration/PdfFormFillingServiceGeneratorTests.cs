@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using PDFiller.Domain;
+using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 
-namespace PDFiller.CSharpCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
 {
     public class PdfFormFillingServiceGeneratorTests
     {
@@ -45,7 +46,7 @@ namespace PDFiller.CSharpCodeGeneration.Tests
             FillFormField(""Second Property"", model.SecondProperty);
 ".TrimStart(_newLineChars);
 
-            var pathToPdfFormFillingService = @"SampleCodeFiles\SamplePdfFormFillingService.cs";
+            var pathToPdfFormFillingService = @"CSharpCodeGeneration\SampleCodeFiles\SamplePdfFormFillingService.cs";
 
             var originalFormModelContent = File.ReadAllText(pathToPdfFormFillingService);
             Assert.DoesNotContain(expectedSnippet, originalFormModelContent);

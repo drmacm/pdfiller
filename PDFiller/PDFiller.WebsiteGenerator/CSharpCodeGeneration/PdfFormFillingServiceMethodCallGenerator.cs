@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using PDFiller.Domain;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace PDFiller.CSharpCodeGeneration
+namespace PDFiller.WebsiteGenerator.CSharpCodeGeneration
 {
     public class PdfFormFillingServiceMethodCallGenerator : CSharpSyntaxRewriter
     {

@@ -4,9 +4,10 @@ using System.IO;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using PDFiller.Domain;
+using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 
-namespace PDFiller.CSharpCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
 {
     public class PdfFormFillingServiceMethodCallGeneratorTests
     {
@@ -16,7 +17,7 @@ namespace PDFiller.CSharpCodeGeneration.Tests
         public PdfFormFillingServiceMethodCallGeneratorTests()
         {
             _newLineChars = Environment.NewLine.ToCharArray();
-            var fileName = @"SampleCodeFiles\SamplePdfFormFillingService.cs";
+            var fileName = @"CSharpCodeGeneration\SampleCodeFiles\SamplePdfFormFillingService.cs";
             var sourceCode = File.ReadAllText(fileName);
 
             _syntaxTree = CSharpSyntaxTree.ParseText(sourceCode);

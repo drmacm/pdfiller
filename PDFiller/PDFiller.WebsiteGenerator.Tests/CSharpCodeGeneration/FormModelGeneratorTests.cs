@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using PDFiller.Domain;
+using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 
-namespace PDFiller.CSharpCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
 {
     public class FormModelGeneratorTests
     {
@@ -38,7 +39,7 @@ namespace PDFiller.CSharpCodeGeneration.Tests
         [Fact]
         public void CanGenerateFormModel()
         {
-            var pathToFormModel = @"SampleCodeFiles\SampleFormModel.cs";
+            var pathToFormModel = @"CSharpCodeGeneration\SampleCodeFiles\SampleFormModel.cs";
             var expectedSnippet = "public string Baz { get; set; }";
 
             var originalFormModelContent = File.ReadAllText(pathToFormModel);

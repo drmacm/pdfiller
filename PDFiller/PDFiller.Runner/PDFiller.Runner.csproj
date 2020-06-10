@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PDFiller.CSharpCodeGeneration\PDFiller.CSharpCodeGeneration.csproj" />
     <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
     <ProjectReference Include="..\PDFiller.PDFManipulation\PDFiller.PDFManipulation.csproj" />
     <ProjectReference Include="..\PDFiller.RazorCodeGeneration\PDFiller.RazorCodeGeneration.csproj" />
+    <ProjectReference Include="..\PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj" />
     <ProjectReference Include="..\PDFiller\PDFiller.csproj" />
   </ItemGroup>
 
