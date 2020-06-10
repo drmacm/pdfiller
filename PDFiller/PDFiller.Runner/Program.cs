@@ -20,10 +20,12 @@ namespace PDFiller.Runner
             var pdfFormFinder = new PdfFormFinder(applicationFolder);
             var htmlFormFinder = new HtmlFormFinder(applicationFolder);
             var formModelFinder = new FormModelFinder(applicationFolder);
+            var pdfFormFillingServiceFinder = new PdfFormFillingServiceFinder(applicationFolder);
 
             var pathToPdfForm = pdfFormFinder.GetPath();
             var pathToHtmlForm = htmlFormFinder.GetPath();
             var pathToFormModel = formModelFinder.GetPath();
+            var pathToPdfFormFillingService = pdfFormFillingServiceFinder.GetPath();
 
             CopyPdfFormToWebsite(pathToPdfForm);
 
@@ -37,6 +39,10 @@ namespace PDFiller.Runner
             var formModelContent = GenerateFormModel(formFields, pathToFormModel);
 
             UpdateFormModel(pathToFormModel, formModelContent);
+
+            var pdfFormFillingServiceContent = GeneratePdfFormFillingService(formFields, pathToPdfFormFillingService);
+
+            UpdatePdfFormFillingService(pathToPdfFormFillingService, pdfFormFillingServiceContent);
         }
 
         private static void CopyPdfFormToWebsite(string pathToPdfForm)
@@ -125,11 +131,24 @@ namespace PDFiller.Runner
             return formModelContent;
         }
 
-        private static string UpdateFormModel(string pathToFormModel, string formModelContent)
+        private static void UpdateFormModel(string pathToFormModel, string formModelContent)
         {
             var formModelUpdater = new FormModelUpdater();
             formModelUpdater.UpdateFormModel(pathToFormModel, formModelContent);
-            return null;
+        }
+
+        private static string GeneratePdfFormFillingService(List<FormField> formFields, string pathToPdfFormFillingService)
+        {
+            var pdfFormFillingServiceGenerator = new PdfFormFillingServiceGenerator();
+            var pdfFormFillingServiceContent = pdfFormFillingServiceGenerator.Generate(formFields, pathToPdfFormFillingService);
+
+            return pdfFormFillingServiceContent;
+        }
+
+        private static void UpdatePdfFormFillingService(string pathToPdfFormFillingService, string pdfFormFillingServiceContent)
+        {
+            var pdfFormFillingServiceUpdater = new PdfFormFillingServiceUpdater();
+            pdfFormFillingServiceUpdater.Update(pathToPdfFormFillingService, pdfFormFillingServiceContent);
         }
     }
 }
