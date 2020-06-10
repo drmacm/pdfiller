@@ -6,7 +6,7 @@ using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
 
-namespace PDFiller.PDFManipulation
+namespace PDFiller.WebsiteGenerator.PDFManipulation
 {
     public class PdfPlayground
     {

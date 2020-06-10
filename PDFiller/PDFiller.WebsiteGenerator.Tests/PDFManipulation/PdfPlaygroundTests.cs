@@ -1,6 +1,7 @@
+using PDFiller.WebsiteGenerator.PDFManipulation;
 using Xunit;
 
-namespace PDFiller.PDFManipulation.Tests
+namespace PDFiller.WebsiteGenerator.Tests.PDFManipulation
 {
     public class PdfPlaygroundTests
     {
@@ -9,8 +10,8 @@ namespace PDFiller.PDFManipulation.Tests
         [Fact]
         public void FillUpTestPdf()
         {
-            var source = @"SamplePDFs\PRP-1-bos.pdf";
-            var destination = @"SamplePDFs\PRP-1-bos-filled.pdf";
+            var source = @"PDFManipulation\SamplePDFs\PRP-1-bos.pdf";
+            var destination = @"PDFManipulation\SamplePDFs\PRP-1-bos-filled.pdf";
             
             pdfPlayground.FillUpFormAsFile(source, destination);
         }

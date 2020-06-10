@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
-    <ProjectReference Include="..\PDFiller.PDFManipulation\PDFiller.PDFManipulation.csproj" />
     <ProjectReference Include="..\PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj" />
     <ProjectReference Include="..\PDFiller\PDFiller.csproj" />
   </ItemGroup>

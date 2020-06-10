@@ -1,15 +1,16 @@
 ﻿using System.IO;
 using PDFiller.Domain;
+using PDFiller.WebsiteGenerator.PDFManipulation;
 using Xunit;
 
-namespace PDFiller.PDFManipulation.Tests
+namespace PDFiller.WebsiteGenerator.Tests.PDFManipulation
 {
     public class PdfFormGeneratorTests
     {
         [Fact]
         public void CanGenerateFormWithASingleTextField()
         {
-            var fileName = @"SamplePDFs\TextBoxForm.pdf";
+            var fileName = @"PDFManipulation\SamplePDFs\TextBoxForm.pdf";
             var fields = new[]
             {
                 new FormField("name", FormFieldType.TextBox)
@@ -27,7 +28,7 @@ namespace PDFiller.PDFManipulation.Tests
         [Fact]
         public void CanGenerateFormWithATextFieldAndCheckBox()
         {
-            var fileName = @"SamplePDFs\TextBoxAndCheckBoxForm.pdf";
+            var fileName = @"PDFManipulation\SamplePDFs\TextBoxAndCheckBoxForm.pdf";
 
             var fields = new[]
             {
