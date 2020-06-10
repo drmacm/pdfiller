@@ -32,7 +32,6 @@ namespace PDFiller.Services
 
         private void FillFormFields(FormModel model)
         {
-            FillFormField("name", model.Name);
         }
 
         private void FillFormField(string fieldName, string value)
@@ -41,6 +40,15 @@ namespace PDFiller.Services
             {
                 var formField = _formFields[fieldName];
                 formField.SetValue(value);
+            }
+        }
+
+        private void FillFormField(string fieldName, bool value)
+        {
+            if (_formFields.ContainsKey(fieldName))
+            {
+                var formField = _formFields[fieldName];
+                formField.SetValue(value.ToString());
             }
         }
     }
