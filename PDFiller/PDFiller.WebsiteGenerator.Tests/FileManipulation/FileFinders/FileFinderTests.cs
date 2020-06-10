@@ -7,7 +7,7 @@ namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
 {
     public class SampleFileFinder : FileFinder
     {
-        private static readonly string SamplePath = "PDFiller.sln";
+        private static readonly string SamplePath = "PDFiller.WebsiteGenerator.sln";
 
         public SampleFileFinder(string applicationFolder) : base(applicationFolder, SamplePath)
         {
@@ -68,7 +68,7 @@ namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
             var file = new FileInfo(result);
 
             Assert.True(file.Exists);
-            Assert.Equal(@"PDFiller.sln", file.Name);
+            Assert.Equal(@"PDFiller.WebsiteGenerator.sln", file.Name);
         }
     }
 }
