@@ -39,20 +39,19 @@ namespace PDFiller.CSharpCodeGeneration.Tests
         public void CanGenerateFormModel()
         {
             var pathToFormModel = @"SampleCodeFiles\SampleFormModel.cs";
-            var expectedSource = "public string Baz { get; set; }";
+            var expectedSnippet = "public string Baz { get; set; }";
 
             var originalFormModelContent = File.ReadAllText(pathToFormModel);
-            Assert.DoesNotContain(expectedSource, originalFormModelContent);
+            Assert.DoesNotContain(expectedSnippet, originalFormModelContent);
 
             var formFields = new List<FormField>
             {
                 new FormField("Baz", FormFieldType.TextBox)
             };
             
-            var formModelGenerator = new FormModelGenerator();
-            var newFormModelContent = formModelGenerator.Generate(formFields, pathToFormModel);
+            var newFormModelContent = _formModelGenerator.Generate(formFields, pathToFormModel);
 
-            Assert.Contains(expectedSource, newFormModelContent);
+            Assert.Contains(expectedSnippet, newFormModelContent);
         }
     }
 }

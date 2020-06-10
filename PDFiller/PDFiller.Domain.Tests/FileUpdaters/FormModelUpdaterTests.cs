@@ -36,8 +36,8 @@ namespace PDFiller.Domain.Tests.FileUpdaters
         {
             var formModelFinder = new FormModelFinder(AppDomain.CurrentDomain.BaseDirectory);
             var pathToFormModel = formModelFinder.GetPath();
-            var cSharpFormModelUpdater = new FormModelUpdater();
-            Action action = () => cSharpFormModelUpdater.UpdateFormModel(pathToFormModel, string.Empty);
+            var formModelUpdater = new FormModelUpdater();
+            Action action = () => formModelUpdater.UpdateFormModel(pathToFormModel, string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -53,18 +53,18 @@ namespace PDFiller.Domain.Tests.FileUpdaters
 
             var formModelUpdater = new FormModelUpdater();
 
-            var originalFormModelContent = File.ReadAllText(pathToFormModel);
-            Assert.DoesNotContain(formMarkup, originalFormModelContent);
+            var originalContent = File.ReadAllText(pathToFormModel);
+            Assert.DoesNotContain(formMarkup, originalContent);
 
             formModelUpdater.UpdateFormModel(pathToFormModel, formMarkup);
             
-            var newFormModelContent = File.ReadAllText(pathToFormModel);
-            Assert.Contains(formMarkup, newFormModelContent);
+            var updatedContent = File.ReadAllText(pathToFormModel);
+            Assert.Contains(formMarkup, updatedContent);
 
             //revert
-            File.WriteAllText(pathToFormModel, originalFormModelContent);
-            var cleanedUpFormModelContent = File.ReadAllText(pathToFormModel);
-            Assert.DoesNotContain(formMarkup, cleanedUpFormModelContent);
+            File.WriteAllText(pathToFormModel, originalContent);
+            var revertedContent = File.ReadAllText(pathToFormModel);
+            Assert.DoesNotContain(formMarkup, revertedContent);
         }
     }
 }

@@ -53,18 +53,18 @@ namespace PDFiller.Domain.Tests.FileUpdaters
 
             var htmlFormUpdater = new HtmlFormUpdater();
             
-            var originalHtmlFormContent = File.ReadAllText(pathToHtmlForm);
-            Assert.DoesNotContain(formMarkup, originalHtmlFormContent);
+            var originalContent = File.ReadAllText(pathToHtmlForm);
+            Assert.DoesNotContain(formMarkup, originalContent);
 
             htmlFormUpdater.UpdateHtmlFormInBlazorProject(pathToHtmlForm, formMarkup);
           
-            var newHtmlFormContent = File.ReadAllText(pathToHtmlForm);
-            Assert.Contains(formMarkup, newHtmlFormContent);
+            var updatedContent = File.ReadAllText(pathToHtmlForm);
+            Assert.Contains(formMarkup, updatedContent);
 
             //revert
-            File.WriteAllText(pathToHtmlForm, originalHtmlFormContent);
-            var cleanedUpHtmlFormContent = File.ReadAllText(pathToHtmlForm);
-            Assert.DoesNotContain(formMarkup, cleanedUpHtmlFormContent);
+            File.WriteAllText(pathToHtmlForm, originalContent);
+            var revertedContent = File.ReadAllText(pathToHtmlForm);
+            Assert.DoesNotContain(formMarkup, revertedContent);
         }
     }
 }
