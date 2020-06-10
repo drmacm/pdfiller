@@ -8,7 +8,7 @@ using PDFiller.WebsiteGenerator.FileManipulation.FileUpdaters;
 using PDFiller.WebsiteGenerator.PDFManipulation;
 using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 
-namespace PDFiller.Runner
+namespace PDFiller.WebsiteGenerator.ConsoleRunner
 {
     class Program
     {
