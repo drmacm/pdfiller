@@ -11,7 +11,7 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
         [Fact]
         public void GenerateForm_FieldListNull_ShouldThrow()
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
             Action action = () => htmlFormGenerator.GenerateForm(null);
 
             var exception = Assert.Throws<ArgumentException>(action);
@@ -22,7 +22,7 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
         [Fact]
         public void GenerateForm_FieldListEmpty_ShouldReturnEmptyString()
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
 
             var formHtml = htmlFormGenerator.GenerateForm(new List<FormField>());
 
@@ -32,14 +32,17 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
         [Fact]
         public void GenerateForm_SingleTextField_ShouldReturnHtmlInputElement()
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
             var formField = new FormField("foo", FormFieldType.TextBox);
 
             var formHtml = htmlFormGenerator.GenerateForm(new List<FormField> { formField });
 
-            var expectedHtml =
-                $@"<label for=""foo"">foo</label>
-<input id=""foo"" name=""foo"" required=""required"" />";
+            var expectedHtml = $@"
+    <div class=""form-group"" >
+        <label for=""foo"">foo</label>
+        <InputText id=""foo"" class=""form-control"" @bind-Value=""formModel.foo"" placeholder=""foo"" aria-describedby=""fooHelp""  />
+        <small id=""fooHelp"" class=""form-text text-muted"" >foo</small>
+    </div>".TrimStart(Environment.NewLine.ToCharArray());
             
             Assert.Equal(expectedHtml, formHtml);
         }
@@ -48,14 +51,16 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
         [Fact]
         public void GenerateForm_SingleCheckboxField_ShouldReturnHtmlInputElement()
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
             var formField = new FormField("foo", FormFieldType.CheckBox);
 
             var formHtml = htmlFormGenerator.GenerateForm(new List<FormField> { formField });
 
-            var expectedHtml =
-                @"<label for=""foo"">foo</label>
-<input id=""foo"" name=""foo"" type=""checkbox"" required=""required"" />";
+            var expectedHtml = @"
+    <div class=""form-group"" >
+        <label class=""form-check-label"" for=""foo"">foo</label>
+        <InputCheckbox id=""foo"" class=""form-check-input"" @bind-Value=""formModel.foo"" type=""checkbox"" />
+    </div>".TrimStart(Environment.NewLine.ToCharArray());
 
             Assert.Equal(expectedHtml, formHtml);
         }
@@ -63,7 +68,7 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
         [Fact]
         public void GenerateForm_TextFieldAndCheckboxField_ShouldReturnTwoInputElements()
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
             
             var formFields = new List<FormField>
             {
@@ -73,12 +78,17 @@ namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
 
             var formHtml = htmlFormGenerator.GenerateForm(formFields);
 
-            var expectedHtml =
-                @"<label for=""foo"">foo</label>
-<input id=""foo"" name=""foo"" required=""required"" />
+            var expectedHtml = @"
+    <div class=""form-group"" >
+        <label for=""foo"">foo</label>
+        <InputText id=""foo"" class=""form-control"" @bind-Value=""formModel.foo"" placeholder=""foo"" aria-describedby=""fooHelp""  />
+        <small id=""fooHelp"" class=""form-text text-muted"" >foo</small>
+    </div>
 
-<label for=""bar"">bar</label>
-<input id=""bar"" name=""bar"" type=""checkbox"" required=""required"" />";
+    <div class=""form-group"" >
+        <label class=""form-check-label"" for=""bar"">bar</label>
+        <InputCheckbox id=""bar"" class=""form-check-input"" @bind-Value=""formModel.bar"" type=""checkbox"" />
+    </div>".TrimStart(Environment.NewLine.ToCharArray());
 
             Assert.Equal(expectedHtml, formHtml);
         }

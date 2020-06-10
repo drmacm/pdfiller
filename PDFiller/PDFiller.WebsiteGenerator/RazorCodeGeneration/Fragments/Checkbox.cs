@@ -1,21 +1,21 @@
-﻿using Microsoft.AspNetCore.Components;
-using PDFiller.Domain;
+﻿using PDFiller.Domain;
 
 namespace PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments
 {
-    public static partial class BlazorFragments
+    public static partial class FormFragments
     {
-        public static RenderFragment CheckBox(this FormField formField)
+        public static string CheckBox(this FormField formField)
         {
-            return builder =>
-            {
-                builder.OpenElement(0, "input");
-                builder.AddAttribute(0, "id", formField.HtmlFieldName);
-                builder.AddAttribute(0, "name", formField.HtmlFieldName);
-                builder.AddAttribute(0, "type", "checkbox");
-                builder.AddAttribute(0, "required", "required");
-                builder.CloseElement();
-            };
+            var id = @$"id=""{formField.HtmlFieldName}"" ";
+               
+            var cssClass = @"class=""form-check-input"" ";
+
+            var bindValue = @$"@bind-Value=""formModel.{formField.CSharpFieldName}"" ";
+
+            var inputType = @"type=""checkbox""";
+
+          
+            return @$"        <InputCheckbox {id}{cssClass}{bindValue}{inputType} />";
         }
     }
 }

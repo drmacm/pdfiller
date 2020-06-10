@@ -1,20 +1,22 @@
-﻿using Microsoft.AspNetCore.Components;
-using PDFiller.Domain;
+﻿using PDFiller.Domain;
 
 namespace PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments
 {
-    public static partial class BlazorFragments
+    public static partial class FormFragments
     {
-        public static RenderFragment TextBox(this FormField formField)
+        public static string TextBox(this FormField formField)
         {
-            return builder =>
-            {
-                builder.OpenElement(0, "input");
-                builder.AddAttribute(0, "id", formField.HtmlFieldName);
-                builder.AddAttribute(0, "name", formField.HtmlFieldName);
-                builder.AddAttribute(0, "required", "required");
-                builder.CloseElement();
-            };
+            var id = @$"id=""{formField.HtmlFieldName}"" ";
+        
+            var cssClass = @"class=""form-control"" ";
+            
+            var bindValue = @$"@bind-Value=""formModel.{formField.CSharpFieldName}"" ";
+            
+            var placeholder = @$"placeholder=""{formField.FieldName}"" ";
+            
+            var ariaDescribedBy = @$"aria-describedby=""{formField.HtmlFieldName}Help"" ";
+
+            return $"        <InputText {id}{cssClass}{bindValue}{placeholder}{ariaDescribedBy} />";
         }
     }
 }

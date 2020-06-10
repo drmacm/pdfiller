@@ -1,19 +1,18 @@
-﻿using Microsoft.AspNetCore.Components;
-using PDFiller.Domain;
+﻿using PDFiller.Domain;
 
 namespace PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments
 {
-    public static partial class BlazorFragments
+    public static partial class FormFragments
     {
-        public static RenderFragment Label(this FormField formField)
+        public static string Label(this FormField formField)
         {
-            return builder =>
-            {
-                builder.OpenElement(0, "label");
-                builder.AddAttribute(0, "for", formField.HtmlFieldName);
-                builder.AddContent(0, formField.FieldName);
-                builder.CloseElement();
-            };
+            var cssClass = formField.FieldType == FormFieldType.CheckBox ? @"class=""form-check-label"" " : "";
+            var labelFor = $@"for=""{formField.HtmlFieldName}""";
+            
+            var content = $"{formField.FieldName}";
+
+
+            return $"        <label {cssClass}{labelFor}>{content}</label>";
         }
     }
 }

@@ -82,7 +82,8 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
                 var shouldMoveOn = false;
                 while (!shouldMoveOn)
                 {
-                    var pressedKey = Console.ReadKey(true);
+                    //var pressedKey = Console.ReadKey(true);
+                    var pressedKey = new ConsoleKeyInfo('r', ConsoleKey.R, false, false, false);
 
                     if (pressedKey.Key == ConsoleKey.S)
                     {
@@ -96,7 +97,7 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
                         shouldMoveOn = true;
                     }
 
-                    if (pressedKey.Key == ConsoleKey.O || pressedKey.Key == ConsoleKey.R || pressedKey.Key == ConsoleKey.Enter)
+                    if (pressedKey.Key == ConsoleKey.R || pressedKey.Key == ConsoleKey.Enter)
                     {
                         filteredFormFields.Add(formField);
                         shouldMoveOn = true;
@@ -109,7 +110,7 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
 
         private static string GenerateHtmlForFormFields(List<FormField> formFields)
         {
-            var htmlFormGenerator = new HtmlFormGenerator(new FragmentRenderer());
+            var htmlFormGenerator = new HtmlFormGenerator();
             var formMarkup = htmlFormGenerator.GenerateForm(formFields);
 
             return formMarkup;
