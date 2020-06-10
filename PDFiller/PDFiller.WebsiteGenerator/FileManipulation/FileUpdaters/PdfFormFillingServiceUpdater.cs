@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace PDFiller.Domain.FileUpdaters
+namespace PDFiller.WebsiteGenerator.FileManipulation.FileUpdaters
 {
     public class PdfFormFillingServiceUpdater
     {

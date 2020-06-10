@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
-using PDFiller.Domain.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
 using Xunit;
 
-namespace PDFiller.Domain.Tests.FileFinders
+namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
 {
-    public class FakeFileFinder : FileFinder
+    public class SampleFileFinder : FileFinder
     {
-        private static readonly string RelativePathToHtmlForm = @"SampleFiles\Sample.txt";
+        private static readonly string SamplePath = "PDFiller.sln";
 
-        public FakeFileFinder(string applicationFolder) : base(applicationFolder, RelativePathToHtmlForm)
+        public SampleFileFinder(string applicationFolder) : base(applicationFolder, SamplePath)
         {
         }
     }
@@ -28,7 +28,7 @@ namespace PDFiller.Domain.Tests.FileFinders
         [Fact]
         public void ApplicationFolderEmptyString_ShouldThrow()
         {
-            Action action = () => new FakeFileFinder(string.Empty);
+            Action action = () => new SampleFileFinder(string.Empty);
 
             var exception = Assert.Throws<ArgumentException>(action);
 
@@ -50,12 +50,25 @@ namespace PDFiller.Domain.Tests.FileFinders
         public void ApplicationFolderIsNotNestedAsExpected_ShouldThrow()
         {
             var applicationFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)?.Parent;
-            var htmlFormFinder = new FakeFileFinder(applicationFolder.FullName);
-            Action action = () => htmlFormFinder.GetPath();
+            var fileFinder = new SampleFileFinder(applicationFolder.FullName);
+            Action action = () => fileFinder.GetPath();
 
             var exception = Assert.Throws<ArgumentException>(action);
 
             Assert.Equal("Unexpected folder structure.", exception.Message);
+        }
+
+        [Fact]
+        public void CanReachSampleFile()
+        {
+            var applicationFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            var fileFinder = new SampleFileFinder(applicationFolder.FullName);
+
+            var result = fileFinder.GetPath();
+            var file = new FileInfo(result);
+
+            Assert.True(file.Exists);
+            Assert.Equal(@"PDFiller.sln", file.Name);
         }
     }
 }

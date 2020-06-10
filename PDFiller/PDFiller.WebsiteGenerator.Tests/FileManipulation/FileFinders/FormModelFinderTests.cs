@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using PDFiller.Domain.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
 using Xunit;
 
-namespace PDFiller.Domain.Tests.FileFinders
+namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
 {
     public class FormModelFinderTests
     {
@@ -14,9 +14,10 @@ namespace PDFiller.Domain.Tests.FileFinders
             var formModelFinder = new FormModelFinder(applicationFolder.FullName);
 
             var result = formModelFinder.GetPath();
-            var formModelFile = new FileInfo(result);
-
-            Assert.Equal(@"FormModel.cs", formModelFile.Name);
+            var file = new FileInfo(result);
+            
+            Assert.True(file.Exists);
+            Assert.Equal(@"FormModel.cs", file.Name);
         }
     }
 }

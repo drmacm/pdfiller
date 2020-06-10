@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using PDFiller.Domain.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
 using Xunit;
 
-namespace PDFiller.Domain.Tests.FileFinders
+namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
 {
     public class PdfFormFillingServiceFinderTests
     {
@@ -14,9 +14,10 @@ namespace PDFiller.Domain.Tests.FileFinders
             var pdfFormFillingServiceFinder = new PdfFormFillingServiceFinder(applicationFolder.FullName);
 
             var result = pdfFormFillingServiceFinder.GetPath();
-            var pdfFormFillingServiceFile = new FileInfo(result);
+            var file = new FileInfo(result);
 
-            Assert.Equal("PdfFormFillingService.cs", pdfFormFillingServiceFile.Name);
+            Assert.True(file.Exists);
+            Assert.Equal("PdfFormFillingService.cs", file.Name);
         }
     }
 }

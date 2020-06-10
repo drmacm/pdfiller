@@ -1,4 +1,4 @@
-﻿namespace PDFiller.Domain.FileFinders
+﻿namespace PDFiller.WebsiteGenerator.FileManipulation.FileFinders
 {
     public class PdfFormFillingServiceFinder : FileFinder
     {

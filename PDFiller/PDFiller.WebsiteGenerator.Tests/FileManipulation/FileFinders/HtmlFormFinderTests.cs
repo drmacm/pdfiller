@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using PDFiller.Domain.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
 using Xunit;
 
-namespace PDFiller.Domain.Tests.FileFinders
+namespace PDFiller.WebsiteGenerator.Tests.FileManipulation.FileFinders
 {
     public class HtmlFormFinderTests
     {
@@ -13,9 +13,10 @@ namespace PDFiller.Domain.Tests.FileFinders
             var htmlFormFinder = new HtmlFormFinder(AppDomain.CurrentDomain.BaseDirectory);
             
             var result = htmlFormFinder.GetPath();
-            var htmlFormFile = new FileInfo(result);
-            
-            Assert.Equal("HtmlForm.razor", htmlFormFile.Name);
+            var file = new FileInfo(result);
+
+            Assert.True(file.Exists);
+            Assert.Equal("HtmlForm.razor", file.Name);
         }
     }
 }

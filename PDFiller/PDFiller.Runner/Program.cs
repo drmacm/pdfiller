@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using PDFiller.Domain;
-using PDFiller.Domain.FileFinders;
-using PDFiller.Domain.FileUpdaters;
 using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
+using PDFiller.WebsiteGenerator.FileManipulation;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation.FileUpdaters;
 using PDFiller.WebsiteGenerator.PDFManipulation;
 using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 

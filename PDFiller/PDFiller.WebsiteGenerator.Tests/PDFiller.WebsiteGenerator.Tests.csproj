@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="FileManipulation\SamplePDFs\PRP-1-bos.pdf" />
     <None Remove="PDFManipulation\SamplePDFs\PRP-1-bos.pdf" />
   </ItemGroup>
 
@@ -24,6 +25,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CSharpCodeGeneration\SampleCodeFiles\SamplePoco.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FileManipulation\SamplePDFs\PRP-1-bos.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PDFManipulation\SamplePDFs\PRP-1-bos.pdf">

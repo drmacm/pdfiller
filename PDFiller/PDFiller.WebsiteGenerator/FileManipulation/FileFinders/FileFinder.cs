@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace PDFiller.Domain.FileFinders
+namespace PDFiller.WebsiteGenerator.FileManipulation.FileFinders
 {
     public class FileFinder
     {

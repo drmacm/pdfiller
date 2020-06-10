@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace PDFiller.Domain
+namespace PDFiller.WebsiteGenerator.FileManipulation
 {
     public class FileCopier
     {

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
-using PDFiller.Domain.FileFinders;
+using PDFiller.WebsiteGenerator.FileManipulation;
+using PDFiller.WebsiteGenerator.FileManipulation.FileFinders;
 using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.WebsiteGenerator.Tests.FileManipulation
 {
     public class FileCopierTests
     {
@@ -39,7 +40,7 @@ namespace PDFiller.Domain.Tests
 
             Assert.False(File.Exists(pdfFormDestination));
 
-            var pdfFormSource = @"SamplePDFs\PRP-1-bos.pdf";
+            var pdfFormSource = @"FileManipulation\SamplePDFs\PRP-1-bos.pdf";
             FileCopier.CopyPdfFormToBlazorProject(pdfFormSource, pdfFormDestination);
 
             Assert.True(File.Exists(pdfFormDestination));
