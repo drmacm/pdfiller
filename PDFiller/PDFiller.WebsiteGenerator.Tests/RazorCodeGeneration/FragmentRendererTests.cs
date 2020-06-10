@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
+using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 using Xunit;
 
-namespace PDFiller.RazorCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
 {
     public class FragmentRendererTests
     {

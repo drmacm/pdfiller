@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using PDFiller.Domain;
 
-namespace PDFiller.RazorCodeGeneration.Fragments
+namespace PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments
 {
     public static partial class BlazorFragments
     {

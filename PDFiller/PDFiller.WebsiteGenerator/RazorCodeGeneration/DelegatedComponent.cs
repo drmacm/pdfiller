@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
-namespace PDFiller.RazorCodeGeneration
+namespace PDFiller.WebsiteGenerator.RazorCodeGeneration
 {
     /// <summary>
     /// Component used to generate HTML markup from the <see cref="RenderFragment"/>,

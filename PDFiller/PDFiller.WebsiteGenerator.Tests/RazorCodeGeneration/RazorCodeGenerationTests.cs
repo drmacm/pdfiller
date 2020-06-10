@@ -1,8 +1,9 @@
 ﻿using Bunit;
 using Microsoft.AspNetCore.Components;
+using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 using Xunit;
 
-namespace PDFiller.RazorCodeGeneration.Tests
+namespace PDFiller.WebsiteGenerator.Tests.RazorCodeGeneration
 {
     public class RazorCodeGenerationTests
     {

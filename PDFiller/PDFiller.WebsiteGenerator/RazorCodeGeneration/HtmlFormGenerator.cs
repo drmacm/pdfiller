@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Components;
 using PDFiller.Domain;
-using PDFiller.RazorCodeGeneration.Fragments;
+using PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments;
 
-namespace PDFiller.RazorCodeGeneration
+namespace PDFiller.WebsiteGenerator.RazorCodeGeneration
 {
     public class HtmlFormGenerator
     {

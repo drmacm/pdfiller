@@ -2,7 +2,7 @@
 using Bunit;
 using Microsoft.AspNetCore.Components;
 
-namespace PDFiller.RazorCodeGeneration
+namespace PDFiller.WebsiteGenerator.RazorCodeGeneration
 {
     public interface IFragmentRenderer
     {

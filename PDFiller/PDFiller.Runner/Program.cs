@@ -1,14 +1,11 @@
 ﻿using PDFiller.PDFManipulation;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using Common.Logging.Factory;
-using iText.Svg.Renderers.Path.Impl;
 using PDFiller.Domain;
 using PDFiller.Domain.FileFinders;
 using PDFiller.Domain.FileUpdaters;
-using PDFiller.RazorCodeGeneration;
 using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
+using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 
 namespace PDFiller.Runner
 {
