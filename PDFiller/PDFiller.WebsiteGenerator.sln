@@ -5,19 +5,19 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Domain", "PDFiller.Domain\PDFiller.Domain.csproj", "{5E519457-CE79-4B46-87F3-766C30EF4075}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8CB0B230-8FB4-40E8-BA38-76574328D109}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator", "PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj", "{A191C972-5048-4A2B-A9DF-C6A7A80B5657}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller", "PDFiller\PDFiller.csproj", "{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.WebsiteGenerator", "PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj", "{A191C972-5048-4A2B-A9DF-C6A7A80B5657}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFiller.WebsiteGenerator.Tests", "PDFiller.WebsiteGenerator.Tests\PDFiller.WebsiteGenerator.Tests.csproj", "{9992BB83-3BDC-4B8F-9F1A-FFCC0604B611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator.Tests", "PDFiller.WebsiteGenerator.Tests\PDFiller.WebsiteGenerator.Tests.csproj", "{9992BB83-3BDC-4B8F-9F1A-FFCC0604B611}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator.ConsoleRunner", "PDFiller.WebsiteGenerator.ConsoleRunner\PDFiller.WebsiteGenerator.ConsoleRunner.csproj", "{D174E29A-9110-425D-B444-5F2B510C4D95}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "output", "output", "{C219FBC7-A4BA-4FF0-A969-3CF04AE341F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runners", "runners", "{D78381B6-7DFA-446F-913B-BFD2516CEBE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Website", "PDFiller.Website\PDFiller.Website.csproj", "{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{7ABBEE35-7E80-4CE8-884D-9222234ADC8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{5E519457-CE79-4B46-87F3-766C30EF4075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E519457-CE79-4B46-87F3-766C30EF4075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E519457-CE79-4B46-87F3-766C30EF4075}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A191C972-5048-4A2B-A9DF-C6A7A80B5657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A191C972-5048-4A2B-A9DF-C6A7A80B5657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A191C972-5048-4A2B-A9DF-C6A7A80B5657}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,14 +41,18 @@ Global
 		{D174E29A-9110-425D-B444-5F2B510C4D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D174E29A-9110-425D-B444-5F2B510C4D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D174E29A-9110-425D-B444-5F2B510C4D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4AC7F69E-B4EC-4B82-9AAD-B297C7D6F001} = {C219FBC7-A4BA-4FF0-A969-3CF04AE341F0}
-		{9992BB83-3BDC-4B8F-9F1A-FFCC0604B611} = {8CB0B230-8FB4-40E8-BA38-76574328D109}
+		{5E519457-CE79-4B46-87F3-766C30EF4075} = {7ABBEE35-7E80-4CE8-884D-9222234ADC8C}
 		{D174E29A-9110-425D-B444-5F2B510C4D95} = {D78381B6-7DFA-446F-913B-BFD2516CEBE3}
+		{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D} = {C219FBC7-A4BA-4FF0-A969-3CF04AE341F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1F650CC-A5C0-4533-9FA9-A6946F3CDAB8}

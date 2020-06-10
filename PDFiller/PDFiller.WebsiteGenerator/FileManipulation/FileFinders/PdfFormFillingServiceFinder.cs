@@ -2,7 +2,7 @@
 {
     public class PdfFormFillingServiceFinder : FileFinder
     {
-        private static readonly string RelativePathToPdfForm = @"PDFiller\Services\PdfFormFillingService.cs";
+        private static readonly string RelativePathToPdfForm = @"PDFiller.Website\Services\PdfFormFillingService.cs";
 
         public PdfFormFillingServiceFinder(string applicationFolder) : base(applicationFolder, RelativePathToPdfForm)
         {

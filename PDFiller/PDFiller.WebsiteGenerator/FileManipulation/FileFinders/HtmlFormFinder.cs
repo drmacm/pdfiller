@@ -2,7 +2,7 @@
 {
     public class HtmlFormFinder : FileFinder
     {
-        private static readonly string RelativePathToHtmlForm = @"PDFiller\Pages\HtmlForm.razor";
+        private static readonly string RelativePathToHtmlForm = @"PDFiller.Website\Pages\HtmlForm.razor";
 
         public HtmlFormFinder(string applicationFolder) : base(applicationFolder, RelativePathToHtmlForm)
         {

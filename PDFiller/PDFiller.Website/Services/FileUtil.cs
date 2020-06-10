@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
-namespace PDFiller.Services
+namespace PDFiller.Website.Services
 {
     public static class FileUtil
     {
