@@ -1,8 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using PDFiller.Domain;
 using Xunit;
 
-namespace PDFiller.Domain.Tests
+namespace PDFiller.WebsiteGenerator.Tests.Utilities
 {
     public class FieldNameSanitizerTests
     {

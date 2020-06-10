@@ -66,17 +66,17 @@ namespace PDFiller.CodeGeneration.Tests.SampleCodeFiles
     class SampleFormModel
     {
         [Required]
-        public string SomeStringPropertyC { get; set; }
+        public string First { get; set; }
 
         [Required]
-        public bool SomeBoolPropertyC { get; set; }
+        public bool Second { get; set; }
     }
 }".TrimStart(_newLineChars);
 
             var formFields = new List<FormField>
             {
-                new FormField("some string property č", FormFieldType.TextBox),
-                new FormField("some bool property č", FormFieldType.CheckBox),
+                new FormField("First", FormFieldType.TextBox),
+                new FormField("Second", FormFieldType.CheckBox),
             };
 
             var formModelGenerator = new FormFieldPropertyGenerator(formFields);

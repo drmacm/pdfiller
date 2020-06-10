@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Diacritics.Extensions;
 
-namespace PDFiller.Domain
+namespace PDFiller.WebsiteGenerator.Utilities
 {
     public static class FieldNameSanitizer
     {

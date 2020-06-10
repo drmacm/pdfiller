@@ -42,8 +42,8 @@ namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
         public void CanGeneratePdfFormFillingService()
         {
             var expectedSnippet = @"
-            FillFormField(""First Property"", model.FirstProperty);
-            FillFormField(""Second Property"", model.SecondProperty);
+            FillFormField(""First"", model.First);
+            FillFormField(""Second"", model.Second);
 ".TrimStart(_newLineChars);
 
             var pathToPdfFormFillingService = @"CSharpCodeGeneration\SampleCodeFiles\SamplePdfFormFillingService.cs";
@@ -53,8 +53,8 @@ namespace PDFiller.WebsiteGenerator.Tests.CSharpCodeGeneration
 
             var formFields = new List<FormField>
             {
-                new FormField("First Property", FormFieldType.TextBox),
-                new FormField("Second Property", FormFieldType.TextBox),
+                new FormField("First", FormFieldType.TextBox),
+                new FormField("Second", FormFieldType.TextBox),
             };
 
             var newFormModelContent = _pdfFormFillingServiceGenerator.Generate(formFields, pathToPdfFormFillingService);

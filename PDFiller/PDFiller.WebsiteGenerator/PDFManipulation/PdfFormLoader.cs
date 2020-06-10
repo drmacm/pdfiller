@@ -4,6 +4,7 @@ using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using PDFiller.Domain;
+using FieldNameSanitizer = PDFiller.WebsiteGenerator.Utilities.FieldNameSanitizer;
 
 namespace PDFiller.WebsiteGenerator.PDFManipulation
 {
@@ -29,7 +30,17 @@ namespace PDFiller.WebsiteGenerator.PDFManipulation
                 {
                     fieldType = FormFieldType.CheckBox;
                 }
-                formFields.Add(new FormField(pdfFormField.Key, fieldType));
+
+                var fieldName = pdfFormField.Key;
+                var htmlFieldName = FieldNameSanitizer.SanitizeForHtml(fieldName);
+                var cSharpFieldName = FieldNameSanitizer.SanitizeForCSharp(fieldName);
+
+                formFields.Add(
+                    new FormField(
+                        pdfFormField.Key, 
+                        htmlFieldName,
+                        cSharpFieldName,
+                        fieldType));
             }
 
             document.Close();
