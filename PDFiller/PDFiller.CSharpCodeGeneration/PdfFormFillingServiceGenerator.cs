@@ -19,15 +19,15 @@ namespace PDFiller.CSharpCodeGeneration
                 throw new ArgumentException("Invalid path to Pdf form filling service class.");
             }
 
-            var pdfFormFillingServiceMethodCallGenerator = new PdfFormFillingServiceMethodCallGenerator(formFields);
+            var codeGenerator = new PdfFormFillingServiceMethodCallGenerator(formFields);
 
-            var formModelContent = File.ReadAllText(pathToPdfFormFillingService);
-            var syntaxTree = CSharpSyntaxTree.ParseText(formModelContent);
+            var originalContent = File.ReadAllText(pathToPdfFormFillingService);
+            var syntaxTree = CSharpSyntaxTree.ParseText(originalContent);
 
-            var modifiedSyntaxTree = pdfFormFillingServiceMethodCallGenerator.Visit(syntaxTree.GetRoot());
+            var modifiedSyntaxTree = codeGenerator.Visit(syntaxTree.GetRoot());
                 
-            var updatedPdfFormFillingServiceContent = modifiedSyntaxTree.ToFullString();
-            return updatedPdfFormFillingServiceContent;
+            var updatedContent = modifiedSyntaxTree.ToFullString();
+            return updatedContent;
         }
     }
 }

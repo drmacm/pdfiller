@@ -19,15 +19,15 @@ namespace PDFiller.CSharpCodeGeneration
                 throw new ArgumentException("Invalid path to FormModel class.");
             }
 
-            var formModelPropertyGenerator = new FormFieldPropertyGenerator(formFields);
+            var codeGenerator = new FormFieldPropertyGenerator(formFields);
 
-            var formModelContent = File.ReadAllText(pathToFormModel);
-            var syntaxTree = CSharpSyntaxTree.ParseText(formModelContent);
+            var originalContent = File.ReadAllText(pathToFormModel);
+            var syntaxTree = CSharpSyntaxTree.ParseText(originalContent);
 
-            var modifiedSyntaxTree = formModelPropertyGenerator.Visit(syntaxTree.GetRoot());
+            var modifiedSyntaxTree = codeGenerator.Visit(syntaxTree.GetRoot());
                 
-            var updatedFormModelContent = modifiedSyntaxTree.ToFullString();
-            return updatedFormModelContent;
+            var updatedContent = modifiedSyntaxTree.ToFullString();
+            return updatedContent;
         }
     }
 }
