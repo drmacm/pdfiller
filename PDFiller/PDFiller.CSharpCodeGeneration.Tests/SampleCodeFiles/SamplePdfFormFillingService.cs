@@ -34,5 +34,14 @@
                 formField.SetValue(value);
             }
         }
+
+        private void FillFormField(string fieldName, bool value)
+        {
+            if (_formFields.ContainsKey(fieldName))
+            {
+                var formField = _formFields[fieldName];
+                formField.SetValue(value.ToString());
+            }
+        }
     }
 }
