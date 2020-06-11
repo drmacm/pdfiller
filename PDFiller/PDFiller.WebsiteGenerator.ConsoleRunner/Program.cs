@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Mime;
 using PDFiller.Domain;
 using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using PDFiller.WebsiteGenerator.FileManipulation;
@@ -47,10 +49,10 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
         {
             Console.WriteLine("Enter a path to the PDF form:");
             var pdfFormSource = Console.ReadLine();
-            if (string.IsNullOrEmpty(pdfFormSource))
+            if (string.IsNullOrEmpty(pdfFormSource) || !File.Exists(pdfFormSource))
             {
-                //pdfFormSource = @"SamplePDFs\TextBoxForm.pdf";
-                pdfFormSource = @"SamplePDFs\PRP-1-bos.pdf";
+                Console.WriteLine("You have to provide a valid path to a PDF form");
+                Environment.Exit(0);
             }
 
             Console.WriteLine("Copying the file:");
