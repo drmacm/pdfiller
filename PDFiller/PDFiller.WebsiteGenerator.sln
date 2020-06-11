@@ -11,13 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator.T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator.ConsoleRunner", "PDFiller.WebsiteGenerator.ConsoleRunner\PDFiller.WebsiteGenerator.ConsoleRunner.csproj", "{D174E29A-9110-425D-B444-5F2B510C4D95}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "output", "output", "{C219FBC7-A4BA-4FF0-A969-3CF04AE341F0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "website", "website", "{C219FBC7-A4BA-4FF0-A969-3CF04AE341F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runners", "runners", "{D78381B6-7DFA-446F-913B-BFD2516CEBE3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Website", "PDFiller.Website\PDFiller.Website.csproj", "{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{7ABBEE35-7E80-4CE8-884D-9222234ADC8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{B29F52C7-2C52-47BD-BEF7-190771F64286}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\Copy-GeneratedWebsite.ps1 = scripts\Copy-GeneratedWebsite.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
