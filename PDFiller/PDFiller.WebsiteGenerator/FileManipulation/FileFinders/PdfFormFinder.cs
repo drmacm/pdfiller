@@ -2,7 +2,7 @@
 {
     public class PdfFormFinder : FileFinder
     {
-        private static readonly string RelativePathToPdfForm = @"PDFiller.Website\wwwroot\sample-data\src.pdf";
+        private static readonly string RelativePathToPdfForm = @"PDFiller.Website\wwwroot\src.pdf";
 
         public PdfFormFinder(string applicationFolder) : base(applicationFolder, RelativePathToPdfForm)
         {

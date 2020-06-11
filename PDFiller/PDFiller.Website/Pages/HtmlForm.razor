@@ -20,7 +20,7 @@
 @functions {
     async Task ExportToPdf()
     {
-        var data = await Http.GetByteArrayAsync("sample-data/src.pdf");
+        var data = await Http.GetByteArrayAsync("src.pdf");
         var formToFill = new MemoryStream(data);
 
         var pdfFormFillingService = new PdfFormFillingService();
