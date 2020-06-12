@@ -11,7 +11,7 @@ namespace PDFiller.WebsiteGenerator.FileManipulation.FileFinders
         
         protected FileFinder(string applicationFolder, string relativePath)
         {
-            _solutionFolder = "PDFiller";
+            _solutionFolder = "pdfiller";
             if (string.IsNullOrEmpty(applicationFolder))
             {
                 throw new ArgumentException("Expecting a path to the folder of the executable.");
