@@ -6,27 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="SamplePDFs\PRP-1-bos.pdf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="SamplePDFs\PRP-1-bos.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PDFiller.Models\PDFiller.Models.csproj" />
     <ProjectReference Include="..\PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="SamplePDFs\TextBoxAndCheckBoxForm.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="SamplePDFs\TextBoxForm.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
