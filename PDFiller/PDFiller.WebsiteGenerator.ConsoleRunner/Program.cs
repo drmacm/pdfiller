@@ -84,8 +84,9 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
                 var shouldMoveOn = false;
                 while (!shouldMoveOn)
                 {
-                    //var pressedKey = Console.ReadKey(true);
-                    var pressedKey = new ConsoleKeyInfo('r', ConsoleKey.R, false, false, false);
+                    var pressedKey = Console.ReadKey(true);
+                    //This is used as a shortcut to accept all fields as required, to speed up testing
+                    //var pressedKey = new ConsoleKeyInfo('r', ConsoleKey.R, false, false, false);
 
                     if (pressedKey.Key == ConsoleKey.S)
                     {
