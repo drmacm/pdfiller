@@ -10,7 +10,7 @@ Write-Host "Successfully copied the PDFiller.Website project."
 Copy-Item "..\PDFiller.Website.sln" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\PDFiller.Website.sln"
 Write-Host "Successfully copied the solution file."
 
-Copy-Item "..\..\LICENSE" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\LICENSE"
+Copy-Item "..\LICENSE" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\LICENSE"
 Write-Host "Successfully copied the license file."
 
 Write-Host "Generated website is available in ""..\GeneratedWebsites\$GeneratedWebsiteFolder""."
