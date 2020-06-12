@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using PDFiller.Domain;
+using PDFiller.Models;
 using PDFiller.WebsiteGenerator.RazorCodeGeneration;
 using Xunit;
 

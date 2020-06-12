@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using PDFiller.Domain;
+using PDFiller.Models;
 using PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments;
 
 namespace PDFiller.WebsiteGenerator.RazorCodeGeneration

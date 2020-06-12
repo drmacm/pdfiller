@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
+    <ProjectReference Include="..\PDFiller.Models\PDFiller.Models.csproj" />
     <ProjectReference Include="..\PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj" />
   </ItemGroup>
 

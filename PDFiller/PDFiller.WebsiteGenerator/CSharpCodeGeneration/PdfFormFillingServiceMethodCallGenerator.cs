@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using PDFiller.Domain;
+using PDFiller.Models;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace PDFiller.WebsiteGenerator.CSharpCodeGeneration

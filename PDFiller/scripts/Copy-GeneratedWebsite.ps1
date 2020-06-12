@@ -1,8 +1,8 @@
 Write-Host "Copying a solution with generated website to a separate folder."
 $GeneratedWebsiteFolder = Read-Host -Prompt "Enter a folder name for your static website"
 
-Copy-Item "..\PDFiller.Domain" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\PDFiller.Domain" -Recurse
-Write-Host "Successfully copied the PDFiller.Domain project."
+Copy-Item "..\PDFiller.Models" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\PDFiller.Models" -Recurse
+Write-Host "Successfully copied the PDFiller.Models project."
 
 Copy-Item "..\PDFiller.Website" -Destination "..\GeneratedWebsites\$GeneratedWebsiteFolder\PDFiller.Website" -Recurse
 Write-Host "Successfully copied the PDFiller.Website project."

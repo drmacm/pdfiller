@@ -5,13 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Diacritics" Version="2.1.20036.1" />
     <PackageReference Include="itext7" Version="7.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PDFiller.Domain\PDFiller.Domain.csproj" />
+    <ProjectReference Include="..\PDFiller.Models\PDFiller.Models.csproj" />
   </ItemGroup>
 
 </Project>

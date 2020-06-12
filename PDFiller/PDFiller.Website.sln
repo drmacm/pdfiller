@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller", "PDFiller.Website\PDFiller.Website.csproj", "{5AF78269-EAB4-4380-8592-DFAFBC4047DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Domain", "PDFiller.Domain\PDFiller.Domain.csproj", "{8465D7C6-05E3-48DC-BF4F-61B879475792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Models", "PDFiller.Models\PDFiller.Models.csproj", "{8465D7C6-05E3-48DC-BF4F-61B879475792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

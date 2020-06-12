@@ -1,4 +1,4 @@
-﻿namespace PDFiller.Domain
+﻿namespace PDFiller.Models
 {
     public enum FormFieldType
     {

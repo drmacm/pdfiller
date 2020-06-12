@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using PDFiller.Domain;
+using PDFiller.Models;
 using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 

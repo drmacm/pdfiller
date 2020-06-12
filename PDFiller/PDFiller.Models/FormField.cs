@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace PDFiller.Domain
+namespace PDFiller.Models
 {
     public class FormField
     {

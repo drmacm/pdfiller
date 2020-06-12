@@ -1,4 +1,4 @@
-﻿using PDFiller.Domain;
+﻿using PDFiller.Models;
 
 namespace PDFiller.WebsiteGenerator.RazorCodeGeneration.Fragments
 {

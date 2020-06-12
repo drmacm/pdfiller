@@ -3,7 +3,7 @@ using iText.Forms;
 using iText.Forms.Fields;
 using iText.Kernel.Pdf;
 using iText.Layout;
-using PDFiller.Domain;
+using PDFiller.Models;
 using FieldNameSanitizer = PDFiller.WebsiteGenerator.Utilities.FieldNameSanitizer;
 
 namespace PDFiller.WebsiteGenerator.PDFManipulation

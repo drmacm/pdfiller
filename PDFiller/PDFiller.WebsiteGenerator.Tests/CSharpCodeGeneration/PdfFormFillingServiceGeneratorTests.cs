@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using PDFiller.Domain;
+using PDFiller.Models;
 using PDFiller.WebsiteGenerator.CSharpCodeGeneration;
 using Xunit;
 

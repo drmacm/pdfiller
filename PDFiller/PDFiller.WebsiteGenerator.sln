@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Domain", "PDFiller.Domain\PDFiller.Domain.csproj", "{5E519457-CE79-4B46-87F3-766C30EF4075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Models", "PDFiller.Models\PDFiller.Models.csproj", "{5E519457-CE79-4B46-87F3-766C30EF4075}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.WebsiteGenerator", "PDFiller.WebsiteGenerator\PDFiller.WebsiteGenerator.csproj", "{A191C972-5048-4A2B-A9DF-C6A7A80B5657}"
 EndProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runners", "runners", "{D783
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiller.Website", "PDFiller.Website\PDFiller.Website.csproj", "{89832B2A-A8FD-4DC2-B7CA-07C344F80A7D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{7ABBEE35-7E80-4CE8-884D-9222234ADC8C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{7ABBEE35-7E80-4CE8-884D-9222234ADC8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{B29F52C7-2C52-47BD-BEF7-190771F64286}"
 	ProjectSection(SolutionItems) = preProject

@@ -53,7 +53,7 @@ After the relevant files are modified, you need to copy the website to a separat
 To copy the website, run the script in "scripts\Copy-GeneratedWebsite.ps1".
 
 It will prompt you for a [FOLDER_NAME] for your website and it will copy the files needed for running the static website into GeneratedWebsites/[FOLDER_NAME]. Files and folders that are copied:
-- PDFiller.Domain
+- PDFiller.Models
 - PDFiller.Website
 - PDFiller.Website.sln
 - LICENSE file

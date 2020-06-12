@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
-using PDFiller.Domain;
+using PDFiller.Models;
 
 namespace PDFiller.WebsiteGenerator.CSharpCodeGeneration
 {
