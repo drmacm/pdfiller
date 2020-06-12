@@ -353,4 +353,4 @@ MigrationBackup/
 *.pdf
 
 #Ignoring the folder with generated websites
-PDFiller/GeneratedWebsites/
+GeneratedWebsites/
