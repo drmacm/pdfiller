@@ -13,7 +13,9 @@
 </EditForm>
 
 @code {
-    private readonly FormModel formModel = new FormModel().SetPropertyValuesToPropertyNames();
+    
+                                                            //Use this option while testing, to have the form pre-filled
+    private readonly FormModel formModel = new FormModel(); //.SetPropertyValuesToPropertyNames();
 }
 
 
