@@ -36,7 +36,7 @@ namespace PDFiller.Website.Services
 
         private void FillFormField(string fieldName, string value)
         {
-            if (_formFields.ContainsKey(fieldName))
+            if (_formFields.ContainsKey(fieldName) && !string.IsNullOrEmpty(value))
             {
                 var formField = _formFields[fieldName];
                 formField.SetValue(value);
