@@ -47,6 +47,8 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
 
         private static void CopyPdfFormToWebsite(string pathToPdfForm)
         {
+            Console.WriteLine("PDFiller - a tool that helps you create a simple static website based on your fillable PDF form.");
+            Console.WriteLine();
             Console.WriteLine("Enter a path to the PDF form:");
             var pdfFormSource = Console.ReadLine();
             if (string.IsNullOrEmpty(pdfFormSource) || !File.Exists(pdfFormSource))
@@ -55,7 +57,7 @@ namespace PDFiller.WebsiteGenerator.ConsoleRunner
                 Environment.Exit(0);
             }
 
-            Console.WriteLine("Copying the file:");
+            Console.WriteLine("Copying PDF form to the website:");
             Console.WriteLine(@$"""{pdfFormSource}""");
             Console.WriteLine("To:");
             Console.WriteLine(@$"""{pathToPdfForm}""");
