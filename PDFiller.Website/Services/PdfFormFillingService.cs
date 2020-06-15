@@ -45,7 +45,7 @@ namespace PDFiller.Website.Services
 
         private void FillFormField(string fieldName, bool value)
         {
-            if (_formFields.ContainsKey(fieldName))
+            if (_formFields.ContainsKey(fieldName) && value)
             {
                 var formField = _formFields[fieldName];
                 formField.SetValue(value.ToString());
