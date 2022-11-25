@@ -10,8 +10,7 @@ There are various reasons why you may want to create such a website:
 - making use of responsive design of the HTML form
 
 Creating such a website usually requires:
-- fronend website with a HTML form whose fields correspond to the PDF form
-- submitting the form sends the data from the HTML form via an API call
+- frontend website with a HTML form whose fields correspond to the PDF form
 - backend service that accepts the data, fills the PDF form and offers it for download
 
 Basically, creating a HTML counterpart for a single PDF form requires a whole client-server solution, together with deployment and hosting.
